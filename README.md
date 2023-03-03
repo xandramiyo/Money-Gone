@@ -5,8 +5,11 @@ Money Gone is an app to keep track of where your money has gone! Log all your pu
 ## Technologies Used
 
 Javascript
+
 HTML
+
 CSS
+
 React.js
 
 ## Check it out!

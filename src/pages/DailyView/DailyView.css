@@ -1,0 +1,72 @@
+.day-header {
+	align-items: center;
+	padding-top: .5rem;
+}
+
+h1 {
+	margin: .4rem;
+}
+
+.day-toggle img {
+	height: 3rem;
+}
+
+.day-toggle {
+	height: 4rem;
+	border-radius: .5rem;
+	margin: .8rem;
+	box-shadow: 4px 4px 4px rgb(85, 85, 85);
+	cursor: pointer;
+}
+
+.todayBtn:active,
+.day-toggle:active {
+	box-shadow: none;
+	transform: translateY(3px);
+}
+
+.todayBtn {
+	padding: .3rem 2rem;
+	box-shadow: 2px 2px 2px rgb(85, 85, 85);
+	cursor: pointer;
+}
+
+.day-header div {
+	width: 13rem;
+}
+
+@media (max-width: 400px) {
+	h1 {
+		font-size: 1.5rem;
+	}
+
+	.day-toggle img {
+		height: 1.6rem;
+	}
+
+	.day-toggle {
+		height: 2.5rem;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+.add-entry {
+	margin: 1rem;
+	width: 19rem;
+}
+
+@media (min-width: 600px) {
+	.day-header {
+		width: 100%;
+		justify-content: space-evenly;
+	}
+
+	.day-header div {
+		width: 18rem;
+	}
+
+	.add-entry {
+		width: 25rem;
+	}
+}

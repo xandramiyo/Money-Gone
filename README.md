@@ -1,6 +1,6 @@
 # Money Gone
 
-Money Gone is an app to keep track of where your money has gone! Log all your purchases in a daily view and set each purchase to a category. Check the spending page to see all purhcases made within a specific category, keep track of your income streams, and track your savings. 
+Money Gone is an app to keep track of your spending! Log all your purchases in a daily view and set each purchase to a category. Check the spending page to see all purhcases made within a specific category, keep track of your income streams, and track your savings. 
 
 ## Technologies Used
 

@@ -1,7 +1,10 @@
 import './EntryForm.css'
 import {useState} from 'react'
+import * as entriesAPI from '../../utilities/entries-api'
 
-export default function EntryForm() {
+export default function EntryForm({user, date}) {
+	const [entries, setEntries] = useState([])
+    const [newEntry, setNewEntry] = useState('')
 	const [formData, setFormData] = useState({
 		name: '',
 		notes: '',
@@ -17,9 +20,29 @@ export default function EntryForm() {
 		})
 	}
 
+	async function handleAddEntry(evt) {
+        evt.preventDefault()
+        try {
+			console.log(formData)
+            const entry = await entriesAPI.createEntry({ 
+				name: formData.name, 
+				category: formData.category,
+				cost: formData.cost,
+				notes: formData.notes,
+				user: user._id,
+				date: date
+			})
+            // setEntries(todayEntries => [...todayEntries, entry])
+			console.log('entries')
+            setNewEntry("")
+        } catch(err) {
+            console.log(err)
+        }
+    }
+
 	return (
 		<div className="form-container">
-			<form autoComplete="off" className="entry-form">
+			<form autoComplete="off" className="entry-form" onSubmit={handleAddEntry}>
 				<label>Name of entry</label>
               	<input 
 					type="text" 
@@ -27,8 +50,17 @@ export default function EntryForm() {
 					value={formData.name} 
 					onChange={handleChange} 
 					required 
-					placeholder="Tastea boba"
+					placeholder="Target"
 					/>
+				<label>Category</label>
+				<select name="category" value={formData.category} onChange={handleChange} required>
+					<option></option>
+					<option>Bills</option>
+					<option>Groceries</option>
+					<option>Dine Out</option>
+					<option>Household</option>
+					<option>Misc Expenses</option>
+				</select>
 				<label>Cost</label>
               	<input type="text" name="cost" value={formData.cost} onChange={handleChange} required />
 				<label>Notes</label>
@@ -37,8 +69,8 @@ export default function EntryForm() {
 					name="notes" 
 					value={formData.notes} 
 					onChange={handleChange} 
-					rows={4}
-					placeholder="add the list of items purchased or make a note of the thing you bought (ex: not worth, dont come here again)"
+					rows={2}
+					placeholder="optional- add details of your expenses"
 					/>
 				<button type="submit">Add</button>
 			</form>

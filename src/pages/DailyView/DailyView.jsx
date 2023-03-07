@@ -1,26 +1,34 @@
 import './DailyView.css'
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import EntryForm from '../../components/EntryForm/EntryForm'
+import Entry from '../../components/Entry/Entry'
+import * as entriesAPI from '../../utilities/entries-api'
 
-export default function DailyView() {
-    const dayStr = document.querySelector('h1')
-    let today = new Date()
+export default function DailyView({user}) {
+    const [currentDate, setCurrentDate] = useState(new Date())
+    const [entries, setEntries] = useState([])
+
+    useEffect(function() {
+        async function getEntries() {
+          const entries = await entriesAPI.getAll();
+          setEntries(entries);
+        }
+        getEntries();
+      }, []);
 
     async function handlePrevDay(evt) {
-        let prev = today.setDate(today.getDate() - 1)
-        let prevDay = new Date(prev).toDateString()
-        dayStr.innerHTML = prevDay
+        let prevDay = new Date(currentDate.setDate(currentDate.getDate() - 1))
+        setCurrentDate(prevDay)
     }
 
     async function handleNextDay(evt) {
-        let next = today.setDate(today.getDate() + 1)
-        let nextDay = new Date(next).toDateString()
-        dayStr.innerHTML = nextDay
+        let nextDay = new Date(currentDate.setDate(currentDate.getDate() + 1))
+        setCurrentDate(nextDay)
     }
 
     async function handleToday(evt) {
-        let currentDay = new Date().toDateString()
-        dayStr.innerHTML = currentDay
+        let currentDay = new Date()
+        setCurrentDate(currentDay)
     }
 
     return (
@@ -28,14 +36,23 @@ export default function DailyView() {
             <div className="flex-row day-header">
                 <button className="day-toggle flex-row" onClick={handlePrevDay}><img src="https://www.flaticon.com/svg/vstatic/svg/3916/3916931.svg?token=exp=1678125416~hmac=b34cb50592e80544d0398740439cb1dd" /></button>
                 <div>
-                    <h1>{new Date(Date()).toDateString()}</h1>
+                    <h1>{new Date(currentDate).toDateString()}</h1>
                     <button className="todayBtn" onClick={handleToday}>Today</button>
                 </div>
                 <button className="day-toggle" onClick={handleNextDay}><img src="https://www.flaticon.com/svg/vstatic/svg/3916/3916949.svg?token=exp=1678125400~hmac=657a7d3fbac432fbc4b8543f22dd7f46"/></button>
             </div>
             <div className="flex-col add-entry">
-                <EntryForm />
+                <EntryForm user={user} date={currentDate}/>
             </div>
+            { entries.length > 0 ? 
+                <div className="flex-col show-entries">
+                    {entries.map((entry, index) => 
+                        <Entry entry={entry} user={user} key={index}/>
+                    )}
+                </div>
+                    :
+                    "Nothing spent...yet!"
+            }
         </>
     )
 }

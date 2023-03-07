@@ -17,8 +17,8 @@ export default function App() {
         <>
           <NavBar user={user} setUser={setUser} />
           <Routes>
-            <Route path="" element={<DailyView />} />
-            <Route path="" element={<Spending />} />
+            <Route path="" element={<DailyView user={user}/>} />
+            <Route path="" element={<Spending user={user}/>} />
           </Routes>
         </>
         :

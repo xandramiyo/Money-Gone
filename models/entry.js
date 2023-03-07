@@ -6,22 +6,21 @@ const entrySchema = new Schema({
 		type: String,
 		required: true,
 	},
-	Date: {
+	date: {
 		type: Date,
 		required: true,
 	},
-	Notes: {
+	notes: {
 		type: String
 	},
-	Cost: {
+	cost: {
 		type: Number,
 		required: true
 	},
-	Category: {
-		type: Schema.Types.ObjectId,
-		ref: 'Category'
+	category: {
+		type: String,
 	},
-	User: {
+	user: {
 		type: Schema.Types.ObjectId,
 		ref: 'User',
 		required: true,

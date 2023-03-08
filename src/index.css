@@ -2,16 +2,18 @@
 :root {
   --white: #FFFFFF;
   --black: black;
-  --teal: #50A2A7;
-  --yellow: #F4AC45;
-  --red: #CC3F0C;
-  --dim: #a7bfc1;
+  --main: #0FA3B1;
+  --accent-1: #FF9B42;
+  --accent-2: #30736D;
+  --dim: #D9E5D6;
   --dark: #0B3954;
 }
 
 *, *:before, *:after {
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -61,9 +63,9 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: var(--yellow);
+  background-color: var(--accent-1);
   color: var(--white);
-  border: .1vmin solid var(--yellow);
+  border: .1vmin solid var(--accent-1);
   border-radius: 1vmin;
   padding: .6vmin;
   text-align: center;
@@ -72,12 +74,12 @@ body {
 
 .form-container {
   padding: 3vmin;
-  background-color: var(--teal);
+  background-color: var(--main);
   border-radius: 1vmin;
 }
 
 p.error-message {
-  color: var(--red);
+  color: var(--accent-2);
   text-align: center;
 }
 
@@ -105,14 +107,14 @@ input {
 }
 
 input:focus {
-  border: 2px solid var(--yellow);
+  border: 2px solid var(--accent-1);
 }
 
 button, a.button {
   margin: 1vmin;
   padding: 1vmin;
   color: var(--white);
-  background-color: var(--yellow);
+  background-color: var(--accent-1);
   font-size: 2vmin;
   font-weight: bold;
   text-decoration: none;

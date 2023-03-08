@@ -1,9 +1,9 @@
-import './EntryForm.css'
+import './EditEntryForm.css'
 import {useState} from 'react'
 import * as entriesAPI from '../../utilities/entries-api'
 
-export default function EntryForm({user, date, setEntries}) {
-    const [newEntry, setNewEntry] = useState('')
+export default function EditEntryForm({user, date, setEntries}) {
+    const [editedEntry, setEditedEntry] = useState('')
 	const [formData, setFormData] = useState({
 		name: '',
 		notes: '',
@@ -19,10 +19,10 @@ export default function EntryForm({user, date, setEntries}) {
 		})
 	}
 
-	async function handleAddEntry(evt) {
+	async function handleEditEntry(evt) {
         evt.preventDefault()
         try {
-            const entry = await entriesAPI.createEntry({ 
+            const entry = await entriesAPI.editEntry({ 
 				name: formData.name, 
 				category: formData.category,
 				cost: formData.cost,
@@ -30,7 +30,7 @@ export default function EntryForm({user, date, setEntries}) {
 				user: user._id,
 				date: date
 			})
-            setEntries(todayEntries => [...todayEntries, entry])
+            // setEntries(todayEntries => [...todayEntries, entry])
 			setFormData({
 				name: '',
 				notes: '',
@@ -43,8 +43,8 @@ export default function EntryForm({user, date, setEntries}) {
     }
 
 	return (
-		<div className="form-container">
-			<form autoComplete="off" className="entry-form" onSubmit={handleAddEntry}>
+		<div className="form-container edit-form-ctr">
+			<form autoComplete="off" className="entry-form" onSubmit={handleEditEntry}>
 				<label>Name of entry</label>
               	<input 
 					type="text" 
@@ -74,7 +74,7 @@ export default function EntryForm({user, date, setEntries}) {
 					rows={2}
 					placeholder="optional- add details of your expenses"
 					/>
-				<button type="submit">Add</button>
+				<button type="submit">Make Changes</button>
 			</form>
 		</div>
 	)

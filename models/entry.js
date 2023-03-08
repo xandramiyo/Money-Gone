@@ -27,6 +27,7 @@ const entrySchema = new Schema({
 	},
 },{
 	timestamps: true,
+	toJSON: { virtuals: true }
 })
 
 module.exports = mongoose.model('Entry', entrySchema)

@@ -1,3 +1,13 @@
+.daily {
+	height: 100%;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.daily-main {
+	align-items: center;
+}
+
 .day-header {
 	align-items: center;
 	padding-top: .5rem;
@@ -35,6 +45,28 @@ h1 {
 	width: 13rem;
 }
 
+.add-entry {
+	margin: 1rem;
+	width: 19rem;
+}
+
+.show-entries {
+	align-items: center;
+}
+
+.daily-total {
+	background-color: var(--accent-2);
+	width: 19rem;
+	border-radius: 4px;
+	margin-bottom: 1rem;
+}
+
+.daily-total p{
+	width: 50%;
+	text-align: right;
+	padding: .2rem; 
+}
+
 @media (max-width: 400px) {
 	h1 {
 		font-size: 1.5rem;
@@ -51,22 +83,18 @@ h1 {
 	}
 }
 
-.add-entry {
-	margin: 1rem;
-	width: 19rem;
-}
-
 @media (min-width: 600px) {
 	.day-header {
 		width: 100%;
-		justify-content: space-evenly;
 	}
 
 	.day-header div {
 		width: 18rem;
 	}
-
-	.add-entry {
+	
+	.add-entry,
+	.show-entries,
+	.daily-total {
 		width: 25rem;
 	}
 }

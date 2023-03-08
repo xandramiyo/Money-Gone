@@ -1,0 +1,54 @@
+.entry-item {
+	margin: .5rem;
+	width: 19rem;
+	border: 1px solid var(--accent-1)
+}
+
+.entry-main {
+	align-items: flex-start;
+	border-radius: 4px;
+}
+
+.entry-main p {
+	font-size: .8rem;
+	margin: .1rem;
+	padding: .2rem;
+}
+
+.category {
+	padding: .2rem;
+	width: 100%;
+	border-bottom: 1px solid var(--accent-1)
+}
+
+.CRUD {
+	width: 100%;
+	justify-content: space-evenly;
+}
+
+.CRUD a {
+	font-size: .9rem;
+}
+
+.CRUD * {
+	width: 100%;
+	border-top: none;
+	/* margin: 0rem; */
+}
+
+.CRUD button:hover {
+	background-color: var(--main);
+}
+
+@media (min-width: 600px) {
+
+	.CRUD button,
+	.entry-item p {
+		font-size: .9rem;
+		margin: .1rem;
+	}
+
+	.entry-item {
+		width: 100%;
+	}
+}

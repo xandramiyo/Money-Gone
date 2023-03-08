@@ -1,10 +1,30 @@
-export default function Entry({entry}) {
+import './Entry.css'
+import * as entriesAPI from '../../utilities/entries-api'
+import {Link} from 'react-router-dom'
+
+export default function Entry({entry, entries, setEntries}) {
+
+	async function handleEdit() {
+		const editedEntry = await entriesAPI.editEntry(entry)
+	}
+
+	async function handleDelete() {
+		const deleteEntry = await entriesAPI.deleteEntry(entry)
+		setEntries(entries.filter((entry)=> entry._id != deleteEntry._id))
+	}
+
 	return (
-		<>
-			<p>{entry.name}</p>
-			<p>{entry.category}</p>
-			<p>{entry.cost}</p>
-			<p>{entry.notes}</p>
-		</>
+		<div className="flex-col entry-item">
+			<div className="flex-col entry-main">	
+				<p className="category">{entry.category}</p>
+				<p>{entry.name}</p>
+				<p>${entry.cost}</p>
+				{entry.notes ? <p>{entry.notes}</p> : null}
+			</div>
+			<div className="flex-row CRUD">
+				<Link to="/edit"><button>edit</button></Link>
+				<button onClick={handleDelete}>delete</button>
+			</div>
+		</div>
 	)
 }

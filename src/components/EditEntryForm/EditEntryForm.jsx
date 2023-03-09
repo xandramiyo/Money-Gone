@@ -1,14 +1,21 @@
 import './EditEntryForm.css'
-import {useState} from 'react'
+import { useState } from 'react'
+import { useLocation, useParams, useNavigate } from 'react-router-dom'
 import * as entriesAPI from '../../utilities/entries-api'
 
-export default function EditEntryForm({user, date, setEntries}) {
+export default function EditEntryForm({user, date, entry, setEntries}) {
+	const location = useLocation()
+	const { from } = location.state
+	const {entryId} = useParams()
+	const navigate = useNavigate()
+
     const [editedEntry, setEditedEntry] = useState('')
 	const [formData, setFormData] = useState({
-		name: '',
-		notes: '',
-		cost: '',
-		category: '',
+		name: location.state.name,
+		category: location.state.category,
+		cost: location.state.cost,
+		notes: location.state.notes,
+		date: location.state.date
 	})
   
 	function handleChange(evt) {
@@ -22,21 +29,14 @@ export default function EditEntryForm({user, date, setEntries}) {
 	async function handleEditEntry(evt) {
         evt.preventDefault()
         try {
-            const entry = await entriesAPI.editEntry({ 
+            const entry = await entriesAPI.editEntry(entryId, { 
 				name: formData.name, 
 				category: formData.category,
 				cost: formData.cost,
 				notes: formData.notes,
 				user: user._id,
-				date: date
 			})
-            // setEntries(todayEntries => [...todayEntries, entry])
-			setFormData({
-				name: '',
-				notes: '',
-				cost: '',
-				category: '',
-			})
+            navigate('/')
         } catch(err) {
             console.log(err)
         }

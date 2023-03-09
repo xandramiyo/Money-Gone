@@ -1,0 +1,24 @@
+.income-table {
+	border: 1px solid var(--accent-1);
+	margin: 1rem;
+	width: 15rem;
+}
+
+.income-table * {
+	padding: .4rem;
+	border: 1px solid var(--accent-1);
+	margin: 0rem;
+	width: 5rem;
+}
+
+.income-table td {
+	font-size: .9rem;
+}
+
+@media (min-width: 600px) {
+
+	.income-table{
+		width: 32rem;
+	}
+
+}

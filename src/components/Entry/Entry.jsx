@@ -1,12 +1,8 @@
 import './Entry.css'
 import * as entriesAPI from '../../utilities/entries-api'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function Entry({entry, entries, setEntries}) {
-
-	async function handleEdit() {
-		const editedEntry = await entriesAPI.editEntry(entry)
-	}
 
 	async function handleDelete() {
 		const deleteEntry = await entriesAPI.deleteEntry(entry)
@@ -22,7 +18,13 @@ export default function Entry({entry, entries, setEntries}) {
 				{entry.notes ? <p>{entry.notes}</p> : null}
 			</div>
 			<div className="flex-row CRUD">
-				<Link to="/edit"><button>edit</button></Link>
+				<Link to={`/edit/${entry._id}`} state={{ 
+					name: entry.name,
+					category: entry.category,
+					cost: entry.cost,
+					notes: entry.notes,
+					date: entry.date,
+				 }}><button>edit</button></Link>
 				<button onClick={handleDelete}>delete</button>
 			</div>
 		</div>

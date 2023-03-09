@@ -2,12 +2,16 @@
 :root {
   --white: #FFFFFF;
   --black: black;
-  --main: #0FA3B1;
-  --accent-1: #FF9B42;
-  --accent-2: #30736D;
-  --dim: #D9E5D6;
-  --dark: #0B3954;
+  --main: #58A4B0;
+  --accent-1: #A9BCD0;
+  --accent-2: #699A75;
+  --accent-3: #DA3E52;
+  --dim: #D8DBE2;
 }
+
+/* #E94F37
+#DA3E52
+#B80C09 */
 
 *, *:before, *:after {
   box-sizing: border-box;

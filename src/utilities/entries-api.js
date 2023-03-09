@@ -9,8 +9,9 @@ export async function getAll() {
     return sendRequest(BASE_URL)
 }
 
-export async function editEntry(entry) {
-    return sendRequest(`${BASE_URL}/${entry.id}/edit`, 'PUT', entry)
+export async function editEntry(entryId, entry) {
+    console.log(entry)
+    return sendRequest(`${BASE_URL}/${entryId}/edit`, 'PUT', entry)
 }
 
 export async function deleteEntry(entry) {

@@ -58,6 +58,7 @@ export default function EntryForm({user, date, setEntries}) {
 				<select name="category" value={formData.category} onChange={handleChange} required>
 					<option></option>
 					<option>Bills</option>
+					<option>Savings</option>
 					<option>Groceries</option>
 					<option>Dine Out</option>
 					<option>Household</option>
@@ -74,7 +75,7 @@ export default function EntryForm({user, date, setEntries}) {
 					rows={2}
 					placeholder="optional- add details of your expenses"
 					/>
-				<button type="submit">Add</button>
+				<button type="submit" className="submit">Add</button>
 			</form>
 		</div>
 	)

@@ -7,6 +7,7 @@ import Spending from '../Spending/Spending';
 import DailyView from '../DailyView/DailyView';
 import EditEntryForm from '../../components/EditEntryForm/EditEntryForm'
 import NavBar from '../../components/NavBar/NavBar'
+import CategoryDetails from '../CategoryDetails/CategoryDetails';
 
 export default function App() {
   const [ user, setUser ] = useState(getUser())
@@ -19,8 +20,14 @@ export default function App() {
           <NavBar user={user} setUser={setUser} />
           <Routes>
             <Route path="/" element={<DailyView user={user}/>} />
-            <Route path="/" element={<Spending user={user}/>} />
-            <Route path="/edit" element={<EditEntryForm user={user}/>}/>
+            <Route path="/spending" element={<Spending user={user}/>} />
+            <Route path="/edit/:entryId" element={<EditEntryForm user={user}/>}/>
+            <Route path="/spending/bills" element={<CategoryDetails user={user}/>}/>
+            <Route path="/spending/groceries" element={<CategoryDetails user={user}/>}/>
+            <Route path="/spending/dine_out" element={<CategoryDetails user={user}/>}/>
+            <Route path="/spending/household" element={<CategoryDetails user={user}/>}/>
+            <Route path="/spending/misc" element={<CategoryDetails user={user}/>}/>
+            <Route path="/spending/savings" element={<CategoryDetails user={user}/>}/>
           </Routes>
         </>
         :

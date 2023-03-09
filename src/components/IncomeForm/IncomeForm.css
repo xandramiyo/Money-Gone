@@ -1,0 +1,40 @@
+.income-form-ctr {
+	margin-top: 2rem;
+	width: 15rem;
+	padding: .8rem 0rem;
+	align-items: center;
+}
+
+.income-form {
+	justify-content: space-evenly;
+}
+
+.income-form input {
+	width: 6.5rem;
+	margin: .2rem;
+}
+
+.income-form-ctr .income-submit {
+	width: 13.5rem;
+	background-color: var(--accent-2)
+}
+
+@media (min-width: 600px) {
+	h4 {
+		font-size: 1.5rem;
+	}
+
+	.income-form-ctr {
+		width: 32rem;
+	}
+
+	.income-form input {
+		width: 12rem;
+		margin: .5rem 1rem;
+	}
+
+	.income-form-ctr .income-submit {
+		width: 26rem;
+	}
+
+}

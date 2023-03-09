@@ -17,6 +17,11 @@ textarea {
 	overflow: scroll;
 	font-size: .8rem;
 	white-space: pre-line;
+	padding: .3rem;
+}
+
+.submit {
+	background-color: var(--accent-3);
 }
 
 @media (min-width: 600px) {

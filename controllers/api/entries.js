@@ -32,8 +32,25 @@ async function index(req, res) {
 }
 
 async function edit(req, res) {
-	const editedEntry = await Entry.findOne({_id: req.params.id})
-	console.log(res.json(editedEntry))
+    try {
+        const id = req.params.id;
+        const update = {
+            name: req.body.name,
+            category: req.body.category,
+            cost: req.body.cost,
+            notes: req.body.notes
+        };
+
+        const updatedEntry = await Entry.findByIdAndUpdate(
+            id,
+            update,
+            { new: true }
+        );
+
+        res.json(updatedEntry);
+    } catch (err) {
+        res.status(400).json(err);
+    }
 }
 
 async function deleteEntry(req, res) {

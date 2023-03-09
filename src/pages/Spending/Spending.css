@@ -1,0 +1,35 @@
+.income-ctr {
+	align-items: center;
+}
+
+.category-div {
+	padding: .2rem;
+	margin: .3rem;
+	border: 1px solid var(--accent-1);
+	border-radius: 5px;
+	width: 15rem;
+	color: var(--main);
+	font-size: .9rem;
+	cursor: pointer;
+}
+
+.category-div:hover {
+	background-color: var(--accent-3);
+	color: white;
+	border: 1px solid var(--white);
+}
+
+@media (min-width: 600px) {
+	.cat-ctr {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.category-div {
+		margin: .5rem 1rem;
+		padding: .5rem;
+		width: 15rem;
+		font-size: 1.1rem;
+	}
+}

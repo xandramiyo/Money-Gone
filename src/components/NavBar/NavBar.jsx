@@ -13,7 +13,7 @@ export default function NavBar({ user, setUser }) {
         <nav>
             <Link to="">Daily View</Link>
             &nbsp; | &nbsp;
-            <Link to="">Spending</Link>
+            <Link to="/spending">Spending</Link>
             &nbsp; | &nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>
         </nav>
     )

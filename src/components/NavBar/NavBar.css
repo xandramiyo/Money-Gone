@@ -1,5 +1,17 @@
 nav {
-	background-color: var(--accent-1);
+	background-color: var(--main);
 	width: 100%;
 	padding: .8rem;
+}
+
+a {
+	text-decoration: none;
+}
+
+nav a {
+	color: var(--white);
+}
+
+nav a:hover {
+	color: var(--dark);
 }

@@ -9,6 +9,7 @@
 }
 
 .day-header {
+	justify-content: center;
 	align-items: center;
 	padding-top: .5rem;
 }
@@ -18,11 +19,11 @@ h1 {
 }
 
 .day-toggle img {
-	height: 3rem;
+	height: 1.5rem;
 }
 
 .day-toggle {
-	height: 4rem;
+	height: 2.5rem;
 	border-radius: .5rem;
 	margin: .8rem;
 	box-shadow: 4px 4px 4px rgb(85, 85, 85);
@@ -55,7 +56,7 @@ h1 {
 }
 
 .daily-total {
-	background-color: var(--accent-2);
+	background-color: var(--accent-3);
 	width: 19rem;
 	border-radius: 4px;
 	margin-bottom: 1rem;

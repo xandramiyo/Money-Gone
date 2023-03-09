@@ -1,4 +1,3 @@
-const User = require('../../models/user')
 const Entry = require('../../models/entry')
 
 module.exports = {
@@ -20,7 +19,6 @@ async function create(req, res) {
 		})
 		const newEntry = await entry.save()
 		res.json(newEntry)
-		console.log(req.body.date)
 	} catch(err) {
 		res.status(400).json(err)
 	}

@@ -9,7 +9,12 @@ const incomeSchema = new Schema({
     amount: {
         type: Number,
         required: true
-    }
+    },
+    user: {
+		type: Schema.Types.ObjectId,
+		ref: 'User',
+		required: true,
+	},
 })
 
-module.exports = ('Income', incomeSchema)
+module.exports = mongoose.model('Income', incomeSchema)

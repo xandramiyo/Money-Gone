@@ -1,11 +1,12 @@
 import './IncomeForm.css'
 import { useState } from 'react'
+import * as incomeAPI from  '../../utilities/income-api'
 
 export default function IncomeForm({user}) {
 	const [ incomeEntry, setIncomeEntry ] = useState('')
 	const [ formData, setFormData ] = useState({
 		date: '',
-		amount: ''
+		amount: '',
 	})
 
 	function handleChange(evt) {
@@ -16,9 +17,27 @@ export default function IncomeForm({user}) {
 		})
 	}
 
+	async function handleSubmit(evt) {
+		evt.preventDefault()
+        try {
+            const incomeEntry = await incomeAPI.addIncome({ 
+				date: formData.date, 
+				amount: formData.amount,
+				user: user._id,
+			})
+            setIncomeEntry(incomeList => [...incomeList, incomeEntry])
+			setFormData({
+				date: '',
+				amount: '',
+			})
+        } catch(err) {
+            console.log(err)
+        }
+	}
+
 	return (
 		<>
-			<form className="flex-col form-container income-form-ctr">
+			<form className="flex-col form-container income-form-ctr" onSubmit={handleSubmit}>
 				<h4>Income Tracker</h4>
 				<div className="flex-row income-form">
 					<input

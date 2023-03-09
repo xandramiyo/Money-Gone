@@ -16,10 +16,6 @@ const userSchema = new Schema({
     password: {
       type: String,
       required: true
-    },
-    income: {
-        type: Schema.Types.ObjectId,
-		ref: 'Income',
     }
 }, {
     timestamps: true,

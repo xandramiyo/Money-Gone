@@ -1,6 +1,9 @@
 import './IncomeTable.css'
+import IncomeTableRow from '../IncomeTableRow/IncomeTableRow'
 
-export default function IncomeTable() {
+export default function IncomeTable({ incomeEntries }) {
+	let recentFour = incomeEntries.slice(Math.max(incomeEntries.length -4, 0))
+
 	return (
 		<>
 			<table className="income-table">
@@ -11,10 +14,9 @@ export default function IncomeTable() {
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>3/9/23</td>
-						<td>$100</td>
-					</tr>
+					{recentFour.map((income, index) => 
+						<IncomeTableRow income={income} key={index}/>
+					)}
 				</tbody>
 			</table>
 		</>

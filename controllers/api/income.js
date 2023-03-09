@@ -2,6 +2,7 @@ const Income = require('../../models/income')
 
 module.exports = {
     create,
+	index,
 }
 
 async function create(req, res) {
@@ -12,9 +13,14 @@ async function create(req, res) {
 			user: req.body.user,
 		})
 		const newIncomeEntry = await incomeEntry.save()
-		console.log(res.json(newIncomeEntry))
+		res.json(newIncomeEntry)
 	} catch(err) {
 		console.log(err)
 		res.status(400).json(err)
 	}
+}
+
+async function index(req, res) {
+	const incomeEntries = await Income.find({user: req.user._id})
+	res.json(incomeEntries)
 }

@@ -1,6 +1,6 @@
 .income-form-ctr {
 	margin-top: 2rem;
-	width: 15rem;
+	width: 18rem;
 	padding: .8rem 0rem;
 	align-items: center;
 }
@@ -10,12 +10,12 @@
 }
 
 .income-form input {
-	width: 6.5rem;
+	width: 7.5rem;
 	margin: .2rem;
 }
 
 .income-form-ctr .income-submit {
-	width: 13.5rem;
+	width: 15.4rem;
 	background-color: var(--accent-2)
 }
 

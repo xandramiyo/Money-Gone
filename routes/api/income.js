@@ -4,7 +4,7 @@ const incomeCtrl = require('../../controllers/api/income');
 const ensureLoggedIn = require('../../config/ensureLoggedIn')
 
 router.post('/', ensureLoggedIn, incomeCtrl.create)
-// router.get('/', ensureLoggedIn, incomeCtrl.index)
+router.get('/', ensureLoggedIn, incomeCtrl.index)
 // router.put('/:id/edit', ensureLoggedIn, incomeCtrl.edit)
 // router.delete('/:id/delete', ensureLoggedIn, incomeCtrl.deleteIncome)
 

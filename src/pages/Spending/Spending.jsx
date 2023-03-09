@@ -1,18 +1,30 @@
 import './Spending.css'
-import {Link} from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import IncomeForm from '../../components/IncomeForm/IncomeForm'
 import IncomeTable from '../../components/IncomeTable/IncomeTable'
+import * as incomeAPI from '../../utilities/income-api'
 
-export default function Spending({user}) {
+export default function Spending({ user }) {
+    const [ incomeEntries, setIncomeEntries ] = useState([])
+
+    useEffect(function() {
+        async function getIncomeEntries() {
+          const incomeEntries = await incomeAPI.getAll();
+          setIncomeEntries(incomeEntries);
+        }
+        getIncomeEntries();
+      }, []);
+
     return (
         <>
             <div className="flex-col income-ctr">
-                <IncomeForm user={user} />
-                <IncomeTable />
+                <IncomeForm user={user} incomeEntries={incomeEntries} setIncomeEntries={setIncomeEntries}/>
+                <IncomeTable user={user} incomeEntries={incomeEntries} setIncomeEntries={setIncomeEntries}/>
             </div>
             <div className="cat-ctr">
-                <Link to="/spending/income">
-                    <div className="category-div">Income</div>
+                <Link to="/spending/income-history">
+                    <div className="category-div">Income History</div>
                 </Link>
                 <Link to="/spending/bills">
                     <div className="category-div">Bills</div>

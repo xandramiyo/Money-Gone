@@ -8,6 +8,7 @@ import DailyView from '../DailyView/DailyView';
 import EditEntryForm from '../../components/EditEntryForm/EditEntryForm'
 import NavBar from '../../components/NavBar/NavBar'
 import CategoryDetails from '../CategoryDetails/CategoryDetails';
+import IncomeHistory from '../IncomeHistory/IncomeHistory'
 
 export default function App() {
   const [ user, setUser ] = useState(getUser())
@@ -24,10 +25,11 @@ export default function App() {
             <Route path="/edit/:entryId" element={<EditEntryForm user={user}/>}/>
             <Route path="/spending/bills" element={<CategoryDetails user={user}/>}/>
             <Route path="/spending/groceries" element={<CategoryDetails user={user}/>}/>
-            <Route path="/spending/dine_out" element={<CategoryDetails user={user}/>}/>
+            <Route path="/spending/dine-out" element={<CategoryDetails user={user}/>}/>
             <Route path="/spending/household" element={<CategoryDetails user={user}/>}/>
             <Route path="/spending/misc" element={<CategoryDetails user={user}/>}/>
             <Route path="/spending/savings" element={<CategoryDetails user={user}/>}/>
+            <Route path="/spending/income-history" element={<IncomeHistory user={user}/>}/>
           </Routes>
         </>
         :

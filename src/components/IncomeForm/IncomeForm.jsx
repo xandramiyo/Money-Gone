@@ -2,8 +2,7 @@ import './IncomeForm.css'
 import { useState } from 'react'
 import * as incomeAPI from  '../../utilities/income-api'
 
-export default function IncomeForm({user}) {
-	const [ incomeEntry, setIncomeEntry ] = useState('')
+export default function IncomeForm({user, incomeEntries, setIncomeEntries}) {
 	const [ formData, setFormData ] = useState({
 		date: '',
 		amount: '',
@@ -25,7 +24,7 @@ export default function IncomeForm({user}) {
 				amount: formData.amount,
 				user: user._id,
 			})
-            setIncomeEntry(incomeList => [...incomeList, incomeEntry])
+            setIncomeEntries(incomeList => [...incomeList, incomeEntry])
 			setFormData({
 				date: '',
 				amount: '',

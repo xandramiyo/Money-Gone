@@ -3,13 +3,12 @@ import { useState } from 'react'
 import { useLocation, useParams, useNavigate } from 'react-router-dom'
 import * as entriesAPI from '../../utilities/entries-api'
 
-export default function EditEntryForm({user, date, entry, setEntries}) {
+export default function EditEntryForm({ user }) {
 	const location = useLocation()
 	const { from } = location.state
 	const {entryId} = useParams()
 	const navigate = useNavigate()
 
-    const [editedEntry, setEditedEntry] = useState('')
 	const [formData, setFormData] = useState({
 		name: location.state.name,
 		category: location.state.category,

@@ -2,7 +2,7 @@ import './Entry.css'
 import * as entriesAPI from '../../utilities/entries-api'
 import { Link } from 'react-router-dom'
 
-export default function Entry({entry, entries, setEntries}) {
+export default function Entry({ entry, entries, setEntries }) {
 
 	async function handleDelete() {
 		const deleteEntry = await entriesAPI.deleteEntry(entry)

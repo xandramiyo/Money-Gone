@@ -4,10 +4,10 @@
 
 .category-div {
 	padding: .2rem;
-	margin: .3rem;
+	margin: .4rem;
 	border: 1px solid var(--accent-1);
 	border-radius: 5px;
-	width: 15rem;
+	width: 18rem;
 	color: var(--main);
 	font-size: .9rem;
 	cursor: pointer;

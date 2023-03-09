@@ -1,10 +1,10 @@
 import './DailyView.css'
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import EntryForm from '../../components/EntryForm/EntryForm'
 import Entry from '../../components/Entry/Entry'
 import * as entriesAPI from '../../utilities/entries-api'
 
-export default function DailyView({user}) {
+export default function DailyView({ user }) {
     const [currentDate, setCurrentDate] = useState(new Date())
     const [entries, setEntries] = useState([])
 

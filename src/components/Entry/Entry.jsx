@@ -12,7 +12,7 @@ export default function Entry({ entry, entries, setEntries }) {
 	return (
 		<div className="flex-col entry-item">
 			<div className="flex-col entry-main">	
-				<p className="category">{entry.category}</p>
+				<p className="category">{entry.category.name}</p>
 				<p>{entry.name}</p>
 				<p>${entry.cost}</p>
 				{entry.notes ? <p>{entry.notes}</p> : null}
@@ -20,7 +20,7 @@ export default function Entry({ entry, entries, setEntries }) {
 			<div className="flex-row CRUD">
 				<Link to={`/edit/${entry._id}`} state={{ 
 					name: entry.name,
-					category: entry.category,
+					category: entry.category.name,
 					cost: entry.cost,
 					notes: entry.notes,
 					date: entry.date,

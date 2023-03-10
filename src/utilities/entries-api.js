@@ -2,6 +2,7 @@ import sendRequest from './send-request'
 const BASE_URL = '/api/entries'
 
 export async function createEntry(entry) {
+    console.log('entry', entry.category)
     return sendRequest(BASE_URL, 'POST', entry)
 }
 
@@ -10,7 +11,6 @@ export async function getAll() {
 }
 
 export async function editEntry(entryId, entry) {
-    console.log(entry)
     return sendRequest(`${BASE_URL}/${entryId}/edit`, 'PUT', entry)
 }
 

@@ -42,7 +42,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<DailyView user={user} categories={categories} setCategories={setCategories} />} />
             <Route path="/spending" element={<Spending user={user} incomeEntries={incomeEntries} setIncomeEntries={setIncomeEntries}/>} />
-            <Route path="/edit/:entryId" element={<EditEntryForm user={user}/>}/>
+            <Route path="/edit/:entryId" element={<EditEntryForm user={user} categories={categories} setCategories={setCategories} />}/>
             <Route path="/spending/bills" element={<CategoryDetails user={user}/>}/>
             <Route path="/spending/groceries" element={<CategoryDetails user={user}/>}/>
             <Route path="/spending/dine-out" element={<CategoryDetails user={user}/>}/>

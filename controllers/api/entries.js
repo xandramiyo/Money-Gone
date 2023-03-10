@@ -1,4 +1,5 @@
 const Entry = require('../../models/entry')
+const Category = require('../../models/category')
 
 module.exports = {
     create,
@@ -9,17 +10,20 @@ module.exports = {
 
 async function create(req, res) {
 	try {
+		const category = await Category.findById({_id: req.body.category})
 		const entry = new Entry({
 			name: req.body.name,
-			category: req.body.category,
+			category: category,
 			cost: req.body.cost,
 			notes: req.body.notes,
 			user: req.body.user,
 			date: req.body.date,
 		})
+		console.log(entry)
 		const newEntry = await entry.save()
 		res.json(newEntry)
 	} catch(err) {
+		console.log(err)
 		res.status(400).json(err)
 	}
 }

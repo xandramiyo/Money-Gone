@@ -1,6 +1,7 @@
 import './EntryForm.css'
 import { useState } from 'react'
 import * as entriesAPI from '../../utilities/entries-api'
+import CategoryOption from '../CategoryOption/CategoryOption'
 
 export default function EntryForm({ user, date, setEntries, categories, setCategories }) {
 	const [formData, setFormData] = useState({
@@ -56,12 +57,9 @@ export default function EntryForm({ user, date, setEntries, categories, setCateg
 				<label>Category</label>
 				<select name="category" value={formData.category} onChange={handleChange} required>
 					<option></option>
-					<option>Bills</option>
-					<option>Savings</option>
-					<option>Groceries</option>
-					<option>Dine Out</option>
-					<option>Household</option>
-					<option>Misc Expenses</option>
+					{categories.map((category, index) => 
+						<CategoryOption category={category} key={index} />
+					)}
 				</select>
 				<label>Cost</label>
               	<input type="text" name="cost" value={formData.cost} onChange={handleChange} required />

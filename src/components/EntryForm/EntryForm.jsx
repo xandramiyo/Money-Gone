@@ -2,8 +2,7 @@ import './EntryForm.css'
 import { useState } from 'react'
 import * as entriesAPI from '../../utilities/entries-api'
 
-export default function EntryForm({ user, date, setEntries }) {
-    const [newEntry, setNewEntry] = useState('')
+export default function EntryForm({ user, date, setEntries, categories, setCategories }) {
 	const [formData, setFormData] = useState({
 		name: '',
 		notes: '',

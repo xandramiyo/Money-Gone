@@ -3,18 +3,8 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import IncomeForm from '../../components/IncomeForm/IncomeForm'
 import IncomeTable from '../../components/IncomeTable/IncomeTable'
-import * as incomeAPI from '../../utilities/income-api'
 
-export default function Spending({ user }) {
-    const [ incomeEntries, setIncomeEntries ] = useState([])
-
-    useEffect(function() {
-        async function getIncomeEntries() {
-          const incomeEntries = await incomeAPI.getAll();
-          setIncomeEntries(incomeEntries);
-        }
-        getIncomeEntries();
-      }, []);
+export default function Spending({ user, incomeEntries, setIncomeEntries }) {
 
     return (
         <>

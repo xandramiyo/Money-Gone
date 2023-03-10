@@ -34,6 +34,8 @@ export default function IncomeForm({user, incomeEntries, setIncomeEntries}) {
         }
 	}
 
+	console.log(incomeEntries)
+
 	return (
 		<>
 			<form className="flex-col form-container income-form-ctr" onSubmit={handleSubmit}>

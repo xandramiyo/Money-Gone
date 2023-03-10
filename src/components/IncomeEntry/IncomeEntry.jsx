@@ -1,11 +1,20 @@
 import './IncomeEntry.css'
+import * as incomeAPI from '../../utilities/income-api'
 
-export default function IncomeEntry() {
+export default function IncomeEntry({ incomeEntry, incomeEntries, setIncomeEntries }) {
+
+	async function handleDelete() {
+		const deleteIncome = await incomeAPI.deleteIncome(incomeEntry)
+		setIncomeEntries(incomeEntries.filter((income)=> income._id != deleteIncome._id))
+	}
+
 	return (
-		<>
-			<div>
-				
-			</div>
-		</>
+		<tr>
+			<td>{new Date(incomeEntry.date).toDateString()}</td>
+			<td>${incomeEntry.amount}</td>
+			<td className="delete-cell">
+				<button className="delete-row" onClick={handleDelete} >delete</button>
+			</td>
+		</tr>
 	)
 }

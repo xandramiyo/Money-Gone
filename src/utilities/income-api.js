@@ -8,3 +8,8 @@ export async function addIncome(incomeData) {
 export async function getAll() {
     return sendRequest(BASE_URL)
 }
+
+export async function deleteIncome(income) {
+    console.log(income._id)
+    return sendRequest(`${BASE_URL}/${income._id}/delete`, 'DELETE', income)
+}

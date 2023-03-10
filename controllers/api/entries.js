@@ -44,7 +44,6 @@ async function edit(req, res) {
             update,
             { new: true }
         );
-
         res.json(updatedEntry);
     } catch (err) {
         res.status(400).json(err);

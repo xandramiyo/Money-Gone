@@ -1,0 +1,14 @@
+.delete-row {
+	border: none;
+	width: 100%;
+	color: var(--accent-3);
+	background-color: var(--white);
+}
+
+.delete-row:hover {
+	color: var(--main)
+}
+
+.delete-cell {
+	width: 2rem;
+}

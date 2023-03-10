@@ -1,23 +1,34 @@
 import './IncomeHistory.css'
-import { useState, useEffect } from 'react'
-import * as incomeAPI from '../../utilities/income-api'
 import IncomeEntry from '../../components/IncomeEntry/IncomeEntry'
 
-export default function IncomeHistory({  }){
+export default function IncomeHistory({ incomeEntries, setIncomeEntries }){
 
-	// useEffect(function() {
-    //     async function getIncomeEntries() {
-    //       const incomeEntries = await incomeAPI.getAll();
-    //       setIncomeEntries(incomeEntries);
-    //     }
-    //     getIncomeEntries();
-    //   }, []);
+	let sortIncomes = incomeEntries.sort(function(a,b) {
+		return new Date(b.date) - new Date(a.date)
+	})
 
 	return (
 		<>
-			{/* {incomeEntries.map((entry, index) => 
-				<IncomeEntry user={user} key={index} />
-			)} */}
+			<h2>Income History</h2>
+			<table className="income-table">
+				<thead>
+					<tr>
+						<th>Date</th>
+						<th>Amount</th>
+						<th className="delete-income"></th>
+					</tr>
+				</thead>
+				<tbody>
+					{sortIncomes.map((incomeEntry, index) => 
+						<IncomeEntry 
+							incomeEntry={incomeEntry} 
+							key={index} 
+							incomeEntries={incomeEntries}
+							setIncomeEntries={setIncomeEntries}
+						/>
+					)}
+				</tbody>
+			</table>
 		</>
 	)
 }

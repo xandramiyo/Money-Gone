@@ -4,7 +4,7 @@ import EntryForm from '../../components/EntryForm/EntryForm'
 import Entry from '../../components/Entry/Entry'
 import * as entriesAPI from '../../utilities/entries-api'
 
-export default function DailyView({ user }) {
+export default function DailyView({ user, categories, setCategories }) {
     const [currentDate, setCurrentDate] = useState(new Date())
     const [entries, setEntries] = useState([])
 
@@ -50,7 +50,7 @@ export default function DailyView({ user }) {
                     <button className="day-toggle" onClick={handleNextDay}><img src="https://i.imgur.com/gQVLCgp.png"/></button>
                 </div>
                 <div className="flex-col add-entry">
-                    <EntryForm user={user} date={currentDate} setEntries={setEntries}/>
+                    <EntryForm user={user} date={currentDate} setEntries={setEntries} categories={categories} setCategories={setCategories}/>
                 </div>
                 <div className="flex-row daily-total">
                     <p>Total</p>

@@ -17,7 +17,7 @@ export default function App() {
   const [ user, setUser ] = useState(getUser())
   const [ incomeEntries, setIncomeEntries ] = useState([])
   const [ categories, setCategories ] = useState([])
-  const [entries, setEntries] = useState([])
+  const [ entries, setEntries ] = useState([])
 
   useEffect(function() {
     async function getEntries() {

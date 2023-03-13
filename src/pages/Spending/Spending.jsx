@@ -1,12 +1,9 @@
 import './Spending.css'
-import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import IncomeForm from '../../components/IncomeForm/IncomeForm'
 import IncomeTable from '../../components/IncomeTable/IncomeTable'
-import CategoryDetails from '../CategoryDetails/CategoryDetails'
 
-export default function Spending({ user, incomeEntries, setIncomeEntries, categories, setCategories}) {
-    console.log(categories)
+export default function Spending({ user, incomeEntries, setIncomeEntries, categories }) {
 
     return (
         <>

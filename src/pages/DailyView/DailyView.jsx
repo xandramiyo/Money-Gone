@@ -26,8 +26,7 @@ export default function DailyView({ user, categories, setCategories, entries, se
 
     let total = []
     todayEntries.forEach(entry => total.push(entry.cost))
-    const init = 0
-    let dailyTotal = total.reduce((acc, currentValue) => acc + currentValue, init)
+    let dailyTotal = total.reduce((acc, currentValue) => acc + currentValue, 0)
     
     return (
         <div className="flex-col daily">

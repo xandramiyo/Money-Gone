@@ -4,17 +4,8 @@ import EntryForm from '../../components/EntryForm/EntryForm'
 import Entry from '../../components/Entry/Entry'
 import * as entriesAPI from '../../utilities/entries-api'
 
-export default function DailyView({ user, categories, setCategories }) {
+export default function DailyView({ user, categories, setCategories, entries, setEntries }) {
     const [currentDate, setCurrentDate] = useState(new Date())
-    const [entries, setEntries] = useState([])
-
-    useEffect(function() {
-        async function getEntries() {
-          const entries = await entriesAPI.getAll();
-          setEntries(entries);
-        }
-        getEntries();
-      }, []);
 
     async function handlePrevDay(evt) {
         let prevDay = new Date(currentDate.setDate(currentDate.getDate() - 1))

@@ -4,18 +4,18 @@ import { useLocation, useParams, useNavigate } from 'react-router-dom'
 import * as entriesAPI from '../../utilities/entries-api'
 import CategoryOption from '../CategoryOption/CategoryOption'
 
-export default function EditEntryForm({ user, categories, setCategories }) {
+export default function EditEntryForm({ user, categories, entries, setEntries }) {
 	const location = useLocation()
-	const { from } = location.state
+	const { name, category, cost, notes, date } = location.state
 	const {entryId} = useParams()
 	const navigate = useNavigate()
 
 	const [formData, setFormData] = useState({
-		name: location.state.name,
-		category: location.state.category,
-		cost: location.state.cost,
-		notes: location.state.notes,
-		date: location.state.date
+		name: name,
+		category: category,
+		cost: cost,
+		notes: notes,
+		date: date
 	})
   
 	function handleChange(evt) {
@@ -25,17 +25,24 @@ export default function EditEntryForm({ user, categories, setCategories }) {
 			error: ''
 		})
 	}
+	
+	// entries.forEach((entry) => 
+	// 	console.log(entry)
+	// )
 
 	async function handleEditEntry(evt) {
         evt.preventDefault()
         try {
-            const entry = await entriesAPI.editEntry(entryId, { 
+            const updatedEntry = await entriesAPI.editEntry(entryId, { 
 				name: formData.name, 
 				category: formData.category,
 				cost: formData.cost,
 				notes: formData.notes,
 				user: user._id,
 			})
+			const filteredEntries = entries.filter((entry) => entry.id !== updatedEntry.id)
+			filteredEntries.push(updatedEntry)
+			setEntries(filteredEntries)
             navigate('/')
         } catch(err) {
             console.log(err)

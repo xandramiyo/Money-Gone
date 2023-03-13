@@ -10,7 +10,7 @@ export default function CategoryTable({category}) {
 
 	return (
 		<>
-			<table className="income-table">
+			<table className="table">
 				<thead>
 					<tr>
 						<th>Name</th>

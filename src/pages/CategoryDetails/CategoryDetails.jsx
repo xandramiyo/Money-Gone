@@ -1,4 +1,3 @@
-// import category from "../../models/category";
 import { useLocation } from 'react-router-dom'
 import CategoryTable from '../../components/CategoryTable/CategoryTable'
 

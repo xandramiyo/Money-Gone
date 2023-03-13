@@ -21,6 +21,10 @@
 	border-bottom: 1px solid var(--accent-1)
 }
 
+.main-content {
+	width: 50%;
+}
+
 .CRUD {
 	width: 100%;
 	justify-content: space-evenly;

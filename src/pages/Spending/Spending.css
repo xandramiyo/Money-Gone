@@ -2,6 +2,10 @@
 	align-items: center;
 }
 
+.income-ctr table {
+	width: 32rem; 
+}
+
 .category-div {
 	padding: .2rem;
 	margin: .4rem;

@@ -1,4 +1,3 @@
-import './IncomeHistory.css'
 import IncomeEntry from '../../components/IncomeEntry/IncomeEntry'
 
 export default function IncomeHistory({ incomeEntries, setIncomeEntries }){
@@ -10,7 +9,7 @@ export default function IncomeHistory({ incomeEntries, setIncomeEntries }){
 	return (
 		<>
 			<h2>Income History</h2>
-			<table className="income-table">
+			<table className="table">
 				<thead>
 					<tr>
 						<th>Date</th>

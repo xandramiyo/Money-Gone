@@ -6,7 +6,7 @@ export default function IncomeTable({ incomeEntries }) {
 
 	return (
 		<>
-			<table className="income-table">
+			<table className="table">
 				<thead>
 					<tr>
 						<th>Date</th>

@@ -25,20 +25,20 @@ Node.js
 ## Screenshots
 
 Input purchases, see all purchases for a given day, and see the total of all daily purchases
-<img src="https://imgur.com/BpK0qhW">
+<img src="https://imgur.com/BpK0qhW"/>
 
 Add income streams, see the 4 most recent income entries, and navigate to detail pages for each category
-<img src="https://imgur.com/8FymLA1">
+<img src="https://imgur.com/8FymLA1"/>
 
 See income history in chronological order
-<img src="https://imgur.com/zD2ycA5">
+<img src="https://imgur.com/zD2ycA5"/>
 
 See purchases by category and the total amount spent in a given category
-<img src="https://imgur.com/0BYfhvA">
+<img src="https://imgur.com/0BYfhvA"/>
 
 ## Check it out!
 
-<a href="money-gone.herokuapp.com">See the deployed application here</a>
+<a href="https://money-gone.herokuapp.com">See the deployed application here</a>
 
 <a href="https://trello.com/b/3OVyql3n/project-4">Trello Board</a>
 

@@ -24,20 +24,31 @@ Node.js
 
 ## Screenshots
 
-input transactions
-<img src="https://i.imgur.com/BpK0qhW.png">
+Input purchases, see all purchases for a given day, and see the total of all daily purchases
+<img src="https://imgur.com/BpK0qhW">
 
+Add income streams, see the 4 most recent income entries, and navigate to detail pages for each category
+<img src="https://imgur.com/8FymLA1">
 
-<img src="">
-<img src="">
-<img src="">
-<img src="">
+See income history in chronological order
+<img src="https://imgur.com/zD2ycA5">
+
+See purchases by category and the total amount spent in a given category
+<img src="https://imgur.com/0BYfhvA">
 
 ## Check it out!
 
-<a href="">See the deployed application here</a>
+<a href="money-gone.herokuapp.com">See the deployed application here</a>
+
+<a href="https://trello.com/b/3OVyql3n/project-4">Trello Board</a>
 
 ## Future Updates
+
+<ul>
+	<li>Add sort/filter feature on category detail pages in order to sort purchases by amount or filter by a given time period</li>
+	<li>Mark a purchase as recurring and prevent the purchase from contributing to the category total until the date of the individual entry</li>
+	<li>Add settings so that users may create their own categories</li>
+</ul>
 
 ## Acknowledgements
 

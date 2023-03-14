@@ -42,6 +42,12 @@ See purchases by category and the total amount spent in a given category
 
 <a href="https://trello.com/b/3OVyql3n/project-4">Trello Board</a>
 
+## Bug list
+<ul>
+	<li>editing and deleting an entry does not properly update the categories state</li>
+	<li>issue with the categories sometimes not loading</li>
+</ul>
+
 ## Future Updates
 
 <ul>

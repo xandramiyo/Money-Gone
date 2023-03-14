@@ -1,6 +1,8 @@
 # Money Gone
 
-Money Gone is an app to keep track of your spending! Log all your purchases in a daily view and set each purchase to a category. Check the spending page to see all purhcases made within a specific category, keep track of your income streams, and track your savings. 
+Apps that connect to your bank account to track spending are, personally, too passive to be effective in curbing excessive spending. Manually keeping tabs on every purchase makes me far more conscious and wary of spending more than I should. In comes (pun not intended) Money Gone, an app inspired by the spreadsheet method of budget tracking. 
+
+Log all your purchases in a daily view and set each purchase to a category. Check the spending page to see all purhcases made within a specific category, keep track of your income streams, and track your savings. 
 
 ## Technologies Used
 
@@ -10,11 +12,32 @@ HTML
 
 CSS
 
+Mongoose
+
+MongoDB
+
+Express Framework
+
 React.js
+
+Node.js
+
+## Screenshots
+
+input transactions
+<img src="https://i.imgur.com/BpK0qhW.png">
+
+
+<img src="">
+<img src="">
+<img src="">
+<img src="">
 
 ## Check it out!
 
 <a href="">See the deployed application here</a>
+
+## Future Updates
 
 ## Acknowledgements
 

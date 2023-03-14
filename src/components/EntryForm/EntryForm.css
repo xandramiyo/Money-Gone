@@ -20,10 +20,6 @@ textarea {
 	padding: .3rem;
 }
 
-.submit {
-	background-color: var(--accent-3);
-}
-
 @media (min-width: 600px) {
 	.entry-form label {
 		font-size: 1rem;

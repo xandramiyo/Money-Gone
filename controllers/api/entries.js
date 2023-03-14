@@ -21,6 +21,8 @@ async function create(req, res) {
 		})
 		category.entries.push(entry._id)
 		await category.save()
+		let popCategory = await entry.populate('category')
+		let popEntries = await popCategory.category.populate('entries')
 		res.json(await entry.populate('category'))
 	} catch(err) {
 		console.log(err)

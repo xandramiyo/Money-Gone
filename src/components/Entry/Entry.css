@@ -21,27 +21,33 @@
 	border-bottom: 1px solid var(--accent-1)
 }
 
+.main-content-ctr {
+	width: 100%;
+}
+
 .main-content {
 	width: 50%;
+	text-align: center;
+	padding: 0rem .5rem;
 }
 
-.CRUD {
-	width: 100%;
-	justify-content: space-evenly;
-}
-
-.CRUD a {
-	font-size: .9rem;
-}
-
-.CRUD * {
-	width: 100%;
-	border-top: none;
-	/* margin: 0rem; */
+.CRUD button {
+	color: black;
+	background-color: white;
+	font-weight: 400;
+	padding: 0;
+	margin: 0;
 }
 
 .CRUD button:hover {
-	background-color: var(--main);
+	color: var(--main);
+}
+
+@media (max-width: 600px) {
+	td {
+		max-width: 8rem;
+		word-wrap: break-word;
+	}
 }
 
 @media (min-width: 600px) {
@@ -54,5 +60,10 @@
 
 	.entry-item {
 		width: 100%;
+	}
+
+	td {
+		max-width: 10rem;
+		word-wrap: break-word;
 	}
 }

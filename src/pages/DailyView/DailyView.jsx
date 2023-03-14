@@ -30,7 +30,6 @@ export default function DailyView({ user, categories, setCategories, entries, se
     
     return (
         <div className="flex-col daily">
-            <div className="flex-col daily-main">
                 <div className="flex-row day-header">
                     <button className="day-toggle flex-row" onClick={handlePrevDay}><img src="https://i.imgur.com/42rzMBd.png" /></button>
                     <div>
@@ -39,23 +38,41 @@ export default function DailyView({ user, categories, setCategories, entries, se
                     </div>
                     <button className="day-toggle" onClick={handleNextDay}><img src="https://i.imgur.com/gQVLCgp.png"/></button>
                 </div>
-                <div className="flex-col add-entry">
-                    <EntryForm user={user} date={currentDate} setEntries={setEntries} categories={categories} setCategories={setCategories}/>
-                </div>
-                <div className="flex-row daily-total">
-                    <p>Total</p>
-                    <p>${todayEntries.length > 0 ? dailyTotal : 0}</p>
-                </div>
-                { todayEntries.length > 0 ? 
-                    <div className="flex-col show-entries">
-                        {todayEntries.map((entry, index) => 
-                            <Entry entry={entry} user={user} key={index} entries={entries} setEntries={setEntries}/>
-                        )}
+                <div className="daily-main">
+                    <div className="daily-left">
+                        <div className="flex-col add-entry">
+                            <EntryForm user={user} date={currentDate} setEntries={setEntries} categories={categories} setCategories={setCategories}/>
+                        </div>
+                        <div className="flex-row daily-total">
+                            <p>Total</p>
+                            <p>${todayEntries.length > 0 ? dailyTotal : 0}</p>
+                        </div>
                     </div>
-                        :
-                        "Nothing spent...yet!"
-                }
-            </div>
+                    <div className="daily-right">
+                        <table className="entries-table">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Category</td>
+                                    <td>Notes</td>
+                                    <td>Cost</td>
+                                    <td colSpan={2}></td>
+                                </tr>
+                            </thead>
+                            {/* <tbody> */}
+                                { todayEntries.length > 0 ? 
+                                <tbody className="show-entries">
+                                    {todayEntries.map((entry, index) => 
+                                        <Entry entry={entry} user={user} key={index} entries={entries} setEntries={setEntries} categories={categories} setCategories={setCategories}/>
+                                    )}
+                                </tbody>
+                                    :
+                                    "Nothing spent...yet!"
+                                }
+                            {/* </tbody> */}
+                        </table>
+                    </div>
+                </div>
         </div>
     )
 }

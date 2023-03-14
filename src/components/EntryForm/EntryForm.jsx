@@ -31,6 +31,12 @@ export default function EntryForm({ user, date, setEntries, categories, setCateg
 				date: date
 			})
             setEntries(todayEntries => [...todayEntries, entry])
+			
+			let copyCategories = [...categories]
+			let idx = copyCategories.findIndex((category) => category.name === entry.category.name)
+			copyCategories[idx].entries.push(entry)
+			setCategories(copyCategories)
+
 			setFormData({
 				name: '',
 				notes: '',

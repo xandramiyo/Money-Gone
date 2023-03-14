@@ -12,7 +12,7 @@
 	border: 1px solid var(--accent-1);
 	border-radius: 5px;
 	width: 18rem;
-	color: var(--main);
+	color: var(--accent-3);
 	font-size: .9rem;
 	cursor: pointer;
 }

@@ -4,7 +4,7 @@ import { useLocation, useParams, useNavigate } from 'react-router-dom'
 import * as entriesAPI from '../../utilities/entries-api'
 import CategoryOption from '../CategoryOption/CategoryOption'
 
-export default function EditEntryForm({ user, categories, entries, setEntries }) {
+export default function EditEntryForm({ user, categories, setCategories, entries, setEntries }) {
 	const location = useLocation()
 	const { name, category, cost, notes, date } = location.state
 	const {entryId} = useParams()
@@ -43,6 +43,13 @@ export default function EditEntryForm({ user, categories, entries, setEntries })
 			const filteredEntries = entries.filter((entry) => entry.id !== updatedEntry.id)
 			filteredEntries.push(updatedEntry)
 			setEntries(filteredEntries)
+
+			let copyCategories = [...categories]
+			let idx = copyCategories.findIndex((category) => category.name === updatedEntry.category.name)
+			let entryIdx = copyCategories[idx].entries.findIndex((entry) => entry._id === updatedEntry._id)
+			copyCategories[idx].entries.splice(entryIdx, 1, updatedEntry)
+			setCategories(copyCategories)
+
             navigate('/')
         } catch(err) {
             console.log(err)

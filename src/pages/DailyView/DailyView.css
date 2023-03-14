@@ -1,11 +1,7 @@
-.daily {
-	height: 100%;
-	align-items: center;
-	justify-content: space-between;
-}
-
+.daily,
 .daily-main {
-	align-items: center;
+	height: 100%;
+	width: 100%;
 }
 
 .day-header {
@@ -51,7 +47,11 @@ h1 {
 	width: 19rem;
 }
 
-.show-entries {
+
+.daily-left,
+.daily-right {
+	display: flex;
+	flex-direction: column;
 	align-items: center;
 }
 
@@ -68,7 +68,31 @@ h1 {
 	padding: .2rem; 
 }
 
-@media (max-width: 400px) {
+.entries-table {
+	border: 1px solid var(--accent-1);
+	padding: .2rem;
+	margin: 1rem;
+}
+
+.entries-table td {
+	font-size: .9rem;
+}
+
+td {
+	white-space: pre-wrap;
+}
+
+thead td {
+	border-bottom: 1px solid var(--accent-1);
+	padding: .2rem;
+}
+
+tr td {
+	border: 1px solid var(--accent-1);
+	padding: .2rem;
+}
+
+@media (max-width: 600px) {
 	h1 {
 		font-size: 1.5rem;
 	}
@@ -82,6 +106,15 @@ h1 {
 		align-items: center;
 		justify-content: center;
 	}
+
+	.entries-table {
+		margin: .2rem;
+		width: 22.5rem;
+	}
+
+	.entries-table td {
+		font-size: .8rem;
+	}
 }
 
 @media (min-width: 600px) {
@@ -94,8 +127,42 @@ h1 {
 	}
 	
 	.add-entry,
-	.show-entries,
+	.entries-table,
 	.daily-total {
-		width: 25rem;
+		width: 35rem;
+	}
+}
+
+@media (min-width: 800px) {
+	.daily-main {
+		display: flex;
+		width: 100%;
+		margin-top: 1rem;
+	}
+
+	.add-entry,
+	.daily-total {
+		width: 20rem;
+	}
+
+	.daily-right {
+		width: 100%;
+		display: flex;
+		overflow: scroll;
+	}
+
+	.entries-table {
+		width: 80%;
+	}
+
+	.entry-main {
+		width: 100%;
+	}
+}
+
+@media(min-width: 1200px) {
+	.add-entry,
+	.daily-total {
+		width: 28rem;
 	}
 }

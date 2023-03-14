@@ -43,6 +43,7 @@ export default function App() {
       getIncomeEntries();
     }, []);
 
+
   return (
     <main className="App flex-col">
       {

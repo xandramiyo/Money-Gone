@@ -6,8 +6,11 @@ export default function AuthPage({ setUser }) {
     return (
         <main className="auth-ctr">
             <h1>Money Gone</h1>
-            <SignUpForm setUser={setUser} />
-            <LoginForm setUser={setUser} />
+            <div className="flex-row auth-div">
+                <SignUpForm setUser={setUser} />
+                or 
+                <LoginForm setUser={setUser} />
+            </div>
         </main>
     )
 }

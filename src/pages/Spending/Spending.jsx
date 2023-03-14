@@ -4,7 +4,6 @@ import IncomeForm from '../../components/IncomeForm/IncomeForm'
 import IncomeTable from '../../components/IncomeTable/IncomeTable'
 
 export default function Spending({ user, incomeEntries, setIncomeEntries, categories }) {
-    console.log(categories)
 
     return (
         <>

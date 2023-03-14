@@ -6,3 +6,11 @@
 	justify-content: center;
 	align-items: center;
 }
+
+.auth-div {
+	align-items: center;
+}
+
+.auth-div *{
+	margin: .5rem;
+}

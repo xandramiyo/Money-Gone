@@ -16,7 +16,7 @@ export default function Spending({ user, incomeEntries, setIncomeEntries, catego
                     <div className="category-div">Income History</div>
                 </Link>
                 {categories.map((category, index) => 
-                    <Link to="/spending/details" state={{category: category}}>
+                    <Link to="/spending/details" state={{category: category}} key={index} >
                         <div className="category-div">{category.name}</div>
                     </Link>
                 )}

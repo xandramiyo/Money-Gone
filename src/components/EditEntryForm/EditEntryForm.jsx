@@ -45,9 +45,14 @@ export default function EditEntryForm({ user, categories, setCategories, entries
 			setEntries(filteredEntries)
 
 			let copyCategories = [...categories]
+			console.log('copy 1', copyCategories)
 			let idx = copyCategories.findIndex((category) => category.name === updatedEntry.category.name)
+			console.log('idx', idx)
 			let entryIdx = copyCategories[idx].entries.findIndex((entry) => entry._id === updatedEntry._id)
+			console.log('entryIdx', entryIdx)
 			copyCategories[idx].entries.splice(entryIdx, 1, updatedEntry)
+			console.log('copy 2', copyCategories)
+			// make an if statement and add logic for if category changes- above logic is only valid if category stays the same
 			setCategories(copyCategories)
 
             navigate('/')

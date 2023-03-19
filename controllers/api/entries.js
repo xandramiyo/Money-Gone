@@ -61,7 +61,7 @@ async function edit(req, res) {
 async function deleteEntry(req, res) {
 	try {
 		const deletedEntry = await Entry.findOneAndDelete({_id: req.params.id, userRecommending: req.user._id})
-		res.json(deletedEntry)
+		res.json(await deletedEntry.populate('category'))
 	} catch(err) {
 		console.log(err)
 		res.status(400).json(err)

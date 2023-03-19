@@ -44,7 +44,7 @@ See purchases by category and the total amount spent in a given category
 
 ## Bug list
 <ul>
-	<li>editing and deleting an entry does not properly update the categories state</li>
+	<li>editing an entry does not properly update the categories state</li>
 	<li>issue with the categories sometimes not loading</li>
 </ul>
 

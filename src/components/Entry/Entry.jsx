@@ -1,4 +1,4 @@
-import './Entry.css'
+// import './Entry.css'
 import * as entriesAPI from '../../utilities/entries-api'
 import { Link } from 'react-router-dom'
 

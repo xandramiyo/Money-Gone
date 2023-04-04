@@ -9,12 +9,12 @@ export default function IncomeHistory({ incomeEntries, setIncomeEntries }){
 	return (
 		<>
 			<h2>Income History</h2>
-			<table className="table">
+			<table className="">
 				<thead>
 					<tr>
 						<th>Date</th>
 						<th>Amount</th>
-						<th className="delete-income"></th>
+						<th className=""></th>
 					</tr>
 				</thead>
 				<tbody>

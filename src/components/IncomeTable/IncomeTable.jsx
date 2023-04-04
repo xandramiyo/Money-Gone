@@ -1,4 +1,4 @@
-import './IncomeTable.css'
+// import './IncomeTable.css'
 import IncomeTableRow from '../IncomeTableRow/IncomeTableRow'
 
 export default function IncomeTable({ incomeEntries }) {
@@ -6,7 +6,7 @@ export default function IncomeTable({ incomeEntries }) {
 
 	return (
 		<>
-			<table className="table">
+			<table className="">
 				<thead>
 					<tr>
 						<th>Date</th>

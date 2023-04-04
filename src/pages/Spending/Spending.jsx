@@ -1,4 +1,4 @@
-import './Spending.css'
+// import './Spending.css'
 import { Link } from 'react-router-dom'
 import IncomeForm from '../../components/IncomeForm/IncomeForm'
 import IncomeTable from '../../components/IncomeTable/IncomeTable'
@@ -7,17 +7,17 @@ export default function Spending({ user, incomeEntries, setIncomeEntries, catego
 
     return (
         <>
-            <div className="flex-col income-ctr">
+            <div className="">
                 <IncomeForm user={user} incomeEntries={incomeEntries} setIncomeEntries={setIncomeEntries}/>
                 <IncomeTable user={user} incomeEntries={incomeEntries} setIncomeEntries={setIncomeEntries}/>
             </div>
-            <div className="cat-ctr">
+            <div className="">
                 <Link to="/spending/income-history">
-                    <div className="category-div">Income History</div>
+                    <div className="">Income History</div>
                 </Link>
                 {categories.map((category, index) => 
                     <Link to="/spending/details" state={{category: category}} key={index} >
-                        <div className="category-div">{category.name}</div>
+                        <div className="">{category.name}</div>
                     </Link>
                 )}
             </div>

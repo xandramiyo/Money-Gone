@@ -1,4 +1,4 @@
-import './EditEntryForm.css'
+// import './EditEntryForm.css'
 import { useState } from 'react'
 import { useLocation, useParams, useNavigate } from 'react-router-dom'
 import * as entriesAPI from '../../utilities/entries-api'
@@ -25,10 +25,6 @@ export default function EditEntryForm({ user, categories, setCategories, entries
 			error: ''
 		})
 	}
-	
-	// entries.forEach((entry) => 
-	// 	console.log(entry)
-	// )
 
 	async function handleEditEntry(evt) {
         evt.preventDefault()
@@ -63,7 +59,7 @@ export default function EditEntryForm({ user, categories, setCategories, entries
 
 	return (
 		<div className="form-container edit-form-ctr">
-			<form autoComplete="off" className="entry-form" onSubmit={handleEditEntry}>
+			<form autoComplete="off" className="" onSubmit={handleEditEntry}>
 				<label>Name of entry</label>
               	<input 
 					type="text" 

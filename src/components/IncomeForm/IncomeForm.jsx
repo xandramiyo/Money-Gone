@@ -1,4 +1,4 @@
-import './IncomeForm.css'
+// import './IncomeForm.css'
 import { useState } from 'react'
 import * as incomeAPI from  '../../utilities/income-api'
 
@@ -36,9 +36,9 @@ export default function IncomeForm({user, incomeEntries, setIncomeEntries}) {
 
 	return (
 		<>
-			<form className="flex-col form-container income-form-ctr" onSubmit={handleSubmit}>
+			<form className="" onSubmit={handleSubmit}>
 				<h4>Income Tracker</h4>
-				<div className="flex-row income-form">
+				<div className="">
 					<input
 						type="date" 
 						name="date" 
@@ -56,7 +56,7 @@ export default function IncomeForm({user, incomeEntries, setIncomeEntries}) {
 						placeholder="Enter amount"
 					/>
 				</div>
-				<button type="submit" className="income-submit">Add Income</button>
+				<button type="submit" className="">Add Income</button>
 			</form>
 		</>
 	)

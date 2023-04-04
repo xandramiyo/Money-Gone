@@ -1,4 +1,4 @@
-import './CategoryTable.css'
+// import './CategoryTable.css'
 import CategoryTableRow from "../CategoryTableRow/CategoryTableRow"
 
 export default function CategoryTable({category}) {
@@ -10,7 +10,7 @@ export default function CategoryTable({category}) {
 
 	return (
 		<>
-			<table className="table">
+			<table className="">
 				<thead>
 					<tr>
 						<th>Name</th>
@@ -27,7 +27,7 @@ export default function CategoryTable({category}) {
 				<tfoot>
 					<tr>
 						<th colSpan="2">Total</th>
-						<th colSpan="2" className="cat-total">${categoryTotal}</th>
+						<th colSpan="2" className="">${categoryTotal}</th>
 					</tr>
 				</tfoot>
 			</table>

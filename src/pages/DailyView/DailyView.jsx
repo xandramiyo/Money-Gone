@@ -1,4 +1,4 @@
-import './DailyView.css'
+// import './DailyView.css'
 import { useState, useEffect } from 'react'
 import EntryForm from '../../components/EntryForm/EntryForm'
 import Entry from '../../components/Entry/Entry'
@@ -29,27 +29,27 @@ export default function DailyView({ user, categories, setCategories, entries, se
     let dailyTotal = total.reduce((acc, currentValue) => acc + currentValue, 0)
     
     return (
-        <div className="flex-col daily">
-                <div className="flex-row day-header">
-                    <button className="day-toggle flex-row" onClick={handlePrevDay}><img src="https://i.imgur.com/42rzMBd.png" /></button>
+        <div className="">
+                <div className="">
+                    <button className="" onClick={handlePrevDay}><img src="" /></button>
                     <div>
                         <h1>{new Date(currentDate).toDateString()}</h1>
-                        <button className="todayBtn" onClick={handleToday}>Today</button>
+                        <button className="" onClick={handleToday}>Today</button>
                     </div>
-                    <button className="day-toggle" onClick={handleNextDay}><img src="https://i.imgur.com/gQVLCgp.png"/></button>
+                    <button className="" onClick={handleNextDay}><img src="\"/></button>
                 </div>
-                <div className="daily-main">
-                    <div className="daily-left">
-                        <div className="flex-col add-entry">
+                <div className="">
+                    <div className="">
+                        <div className="">
                             <EntryForm user={user} date={currentDate} setEntries={setEntries} categories={categories} setCategories={setCategories}/>
                         </div>
-                        <div className="flex-row daily-total">
+                        <div className="">
                             <p>Total</p>
                             <p>${todayEntries.length > 0 ? dailyTotal : 0}</p>
                         </div>
                     </div>
-                    <div className="daily-right">
-                        <table className="entries-table">
+                    <div className="">
+                        <table className="">
                             <thead>
                                 <tr>
                                     <td>Name</td>
@@ -61,7 +61,7 @@ export default function DailyView({ user, categories, setCategories, entries, se
                             </thead>
                             {/* <tbody> */}
                                 { todayEntries.length > 0 ? 
-                                <tbody className="show-entries">
+                                <tbody className="">
                                     {todayEntries.map((entry, index) => 
                                         <Entry entry={entry} user={user} key={index} entries={entries} setEntries={setEntries} categories={categories} setCategories={setCategories}/>
                                     )}

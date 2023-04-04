@@ -1,4 +1,4 @@
-import './IncomeEntry.css'
+// import './IncomeEntry.css'
 import * as incomeAPI from '../../utilities/income-api'
 
 export default function IncomeEntry({ incomeEntry, incomeEntries, setIncomeEntries }) {
@@ -13,7 +13,7 @@ export default function IncomeEntry({ incomeEntry, incomeEntries, setIncomeEntri
 			<td>{new Date(incomeEntry.date).toDateString()}</td>
 			<td>${incomeEntry.amount}</td>
 			<td className="delete-cell">
-				<button className="delete-row" onClick={handleDelete} >delete</button>
+				<button className="" onClick={handleDelete} >delete</button>
 			</td>
 		</tr>
 	)

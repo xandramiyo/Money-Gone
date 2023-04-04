@@ -12,6 +12,7 @@ import IncomeHistory from '../IncomeHistory/IncomeHistory'
 import * as entriesAPI from '../../utilities/entries-api'
 import * as incomeAPI from '../../utilities/income-api'
 import * as categoriesAPI from '../../utilities/categories-api'
+import SignUpForm from '../../components/SignUpForm/SignUpForm';
 
 export default function App() {
   const [ user, setUser ] = useState(getUser())
@@ -56,6 +57,7 @@ export default function App() {
             <Route path="/edit/:entryId" element={<EditEntryForm user={user} categories={categories} setCategories={setCategories} entries={entries} setEntries={setEntries}/>}/>
             <Route path="/spending/income-history" element={<IncomeHistory user={user} incomeEntries={incomeEntries} setIncomeEntries={setIncomeEntries}/>}/>
             <Route path="/spending/details" element={<CategoryDetails user={user} categories={categories} setCategories={setCategories}/>}/>
+            <Route path="/signup" element={SignUpForm}></Route>
           </Routes>
         </>
         :

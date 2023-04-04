@@ -4,7 +4,7 @@ Apps that connect to your bank account to track spending are, personally, too pa
 
 Log all your purchases in a daily view and set each purchase to a category. Check the spending page to see all purhcases made within a specific category, keep track of your income streams, and track your savings. 
 
-## Technologies Used
+## Created With
 
 Javascript
 
@@ -21,6 +21,8 @@ Express Framework
 React.js
 
 Node.js
+
+Material UI
 
 ## Screenshots
 

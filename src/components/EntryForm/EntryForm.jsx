@@ -1,4 +1,4 @@
-import './EntryForm.css'
+// import './EntryForm.css'
 import { useState } from 'react'
 import * as entriesAPI from '../../utilities/entries-api'
 import CategoryOption from '../CategoryOption/CategoryOption'
@@ -49,7 +49,7 @@ export default function EntryForm({ user, date, setEntries, categories, setCateg
     }
 
 	return (
-		<div className="form-container">
+		<div className="">
 			<form autoComplete="off" className="entry-form" onSubmit={handleAddEntry}>
 				<label>Name of entry</label>
               	<input 
@@ -78,7 +78,7 @@ export default function EntryForm({ user, date, setEntries, categories, setCateg
 					rows={2}
 					placeholder="optional- add details of your expenses"
 					/>
-				<button type="submit" className="submit">Add</button>
+				<button type="submit" className="">Add</button>
 			</form>
 		</div>
 	)

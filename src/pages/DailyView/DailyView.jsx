@@ -3,6 +3,12 @@ import { useState, useEffect } from 'react'
 import EntryForm from '../../components/EntryForm/EntryForm'
 import Entry from '../../components/Entry/Entry'
 import * as entriesAPI from '../../utilities/entries-api'
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+import Button from '@mui/material/Button';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
+import { Box } from '@mui/material';
 
 export default function DailyView({ user, categories, setCategories, entries, setEntries }) {
     const [currentDate, setCurrentDate] = useState(new Date())
@@ -29,27 +35,34 @@ export default function DailyView({ user, categories, setCategories, entries, se
     let dailyTotal = total.reduce((acc, currentValue) => acc + currentValue, 0)
     
     return (
-        <div className="">
-                <div className="">
-                    <button className="" onClick={handlePrevDay}><img src="" /></button>
+        <div>
+                <Box>
+                    <Box className="flex-col m-5 p-5">
+                        <Typography
+                            variant="h4"
+                            component="h1"
+                        >
+                            {new Date(currentDate).toDateString()}
+                        </Typography>
+                    </Box>
+                    <Box className="flex center m-5">
+                        <IconButton onClick={handlePrevDay}><ArrowBackIcon /></IconButton>
+                        <Button onClick={handleToday} variant="outlined" size="small" >Today</Button>
+                        <IconButton onClick={handleNextDay}><ArrowForwardIcon/></IconButton>
+                    </Box>
+                </Box>
+                <div>
                     <div>
-                        <h1>{new Date(currentDate).toDateString()}</h1>
-                        <button className="" onClick={handleToday}>Today</button>
-                    </div>
-                    <button className="" onClick={handleNextDay}><img src="\"/></button>
-                </div>
-                <div className="">
-                    <div className="">
-                        <div className="">
+                        <div>
                             <EntryForm user={user} date={currentDate} setEntries={setEntries} categories={categories} setCategories={setCategories}/>
                         </div>
-                        <div className="">
+                        <div>
                             <p>Total</p>
                             <p>${todayEntries.length > 0 ? dailyTotal : 0}</p>
                         </div>
                     </div>
-                    <div className="">
-                        <table className="">
+                    <div>
+                        <table>
                             <thead>
                                 <tr>
                                     <td>Name</td>
@@ -61,7 +74,7 @@ export default function DailyView({ user, categories, setCategories, entries, se
                             </thead>
                             {/* <tbody> */}
                                 { todayEntries.length > 0 ? 
-                                <tbody className="">
+                                <tbody>
                                     {todayEntries.map((entry, index) => 
                                         <Entry entry={entry} user={user} key={index} entries={entries} setEntries={setEntries} categories={categories} setCategories={setCategories}/>
                                     )}

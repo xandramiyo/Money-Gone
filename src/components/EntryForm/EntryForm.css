@@ -1,28 +1,5 @@
-.entry-form * {
-	margin: .1rem;
-}
-
-.entry-form label {
-	font-size: .7rem;
-	text-align: left;
-}
-
-.entry-form input {
-	font-size: .8rem;
-}
-
-textarea {
-	border: none;
-	border-radius: 4px;
-	overflow: scroll;
-	font-size: .8rem;
-	white-space: pre-line;
-	padding: .3rem;
-}
-
-@media (min-width: 600px) {
-	.entry-form label {
-		font-size: 1rem;
-		text-align: left;
-	}
+.entry-form {
+	display: flex;
+	flex-direction: column;
+	width: 30rem;
 }

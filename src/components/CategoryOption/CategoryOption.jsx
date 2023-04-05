@@ -1,7 +1,14 @@
+import MenuItem from '@mui/material/MenuItem';
+
 export default function CategoryOption({category}) {
 	return(
 		<>
-			<option value={category._id}>{category.name}</option>
+			<MenuItem 
+				value={category._id} 
+				label="Category"
+			>
+				{category.name}
+			</MenuItem>
 		</>
 	)
 }

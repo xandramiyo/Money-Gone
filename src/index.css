@@ -26,3 +26,31 @@ body {
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
 }
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  align-items: center;
+  justify-content: center;
+}
+
+.m-2 {
+  margin: .2rem;
+}
+
+.m-5 {
+  margin: .5rem;
+}
+
+.p-5 {
+  padding: .5rem;
+}

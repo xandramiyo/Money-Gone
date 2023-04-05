@@ -1,168 +1,17 @@
-.daily,
-.daily-main {
-	height: 100%;
-	width: 100%;
-}
 
-.day-header {
-	justify-content: center;
-	align-items: center;
-	padding-top: .5rem;
-}
-
-h1 {
-	margin: .4rem;
-}
-
-.day-toggle img {
-	height: 1.5rem;
-}
-
-.day-toggle {
-	height: 2.5rem;
-	border-radius: .5rem;
-	margin: .8rem;
-	box-shadow: 4px 4px 4px rgb(85, 85, 85);
-	cursor: pointer;
-}
-
-.todayBtn:active,
-.day-toggle:active {
-	box-shadow: none;
-	transform: translateY(3px);
-}
-
-.todayBtn {
-	padding: .3rem 2rem;
-	box-shadow: 2px 2px 2px rgb(85, 85, 85);
-	cursor: pointer;
-}
-
-.day-header div {
-	width: 13rem;
-}
-
-.add-entry {
-	margin: 1rem;
-	width: 19rem;
-}
-
-
-.daily-left,
-.daily-right {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-}
-
-.daily-total {
-	background-color: var(--accent-3);
-	width: 19rem;
-	border-radius: 4px;
-	margin-bottom: 1rem;
-}
-
-.daily-total p{
-	width: 50%;
-	text-align: right;
-	padding: .2rem; 
-}
-
-.entries-table {
-	border: 1px solid var(--accent-1);
-	padding: .2rem;
-	margin: 1rem;
-}
-
-.entries-table td {
-	font-size: .9rem;
-}
-
-td {
-	white-space: pre-wrap;
-}
-
-thead td {
-	border-bottom: 1px solid var(--accent-1);
-	padding: .2rem;
-}
-
-tr td {
-	border: 1px solid var(--accent-1);
-	padding: .2rem;
-}
 
 @media (max-width: 600px) {
-	h1 {
-		font-size: 1.5rem;
-	}
 
-	.day-toggle img {
-		height: 1.6rem;
-	}
-
-	.day-toggle {
-		height: 2.5rem;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.entries-table {
-		margin: .2rem;
-		width: 22.5rem;
-	}
-
-	.entries-table td {
-		font-size: .8rem;
-	}
 }
 
 @media (min-width: 600px) {
-	.day-header {
-		width: 100%;
-	}
-
-	.day-header div {
-		width: 18rem;
-	}
 	
-	.add-entry,
-	.entries-table,
-	.daily-total {
-		width: 35rem;
-	}
 }
 
 @media (min-width: 800px) {
-	.daily-main {
-		display: flex;
-		width: 100%;
-		margin-top: 1rem;
-	}
-
-	.add-entry,
-	.daily-total {
-		width: 20rem;
-	}
-
-	.daily-right {
-		width: 100%;
-		display: flex;
-		overflow: scroll;
-	}
-
-	.entries-table {
-		width: 80%;
-	}
-
-	.entry-main {
-		width: 100%;
-	}
+	
 }
 
 @media(min-width: 1200px) {
-	.add-entry,
-	.daily-total {
-		width: 28rem;
-	}
+	
 }

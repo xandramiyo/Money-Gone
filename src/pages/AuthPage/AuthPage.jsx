@@ -1,4 +1,3 @@
-// import './AuthPage.css'
 import LoginForm from '../../components/LoginForm/LoginForm'
 import SignUpForm from '../../components/SignUpForm/SignUpForm'
 import { useState} from 'react'
@@ -7,10 +6,10 @@ import Typography from '@mui/material/Typography';
 
 export default function AuthPage({ setUser }) {
 
-    const [showSignUpForm, setShowSignUpForm] = useState(true)
+    const [showLogInForm, setShowLogInForm] = useState(true)
 
     const toggleForm = () => {
-        setShowSignUpForm((prevForm) => !prevForm)
+        setShowLogInForm((prevForm) => !prevForm)
     }
 
     return (
@@ -18,9 +17,9 @@ export default function AuthPage({ setUser }) {
             <Typography variant="h4">Money Gone</Typography>
             <div> 
                 <div>
-                    {showSignUpForm ? <SignUpForm setUser={setUser} /> : <LoginForm setUser={setUser} />}
-                    <Typography>{showSignUpForm ? 'Already have an account?' : 'Don\'t have an account?'}</Typography>
-                    <Button onClick={toggleForm} variant="" >{showSignUpForm ? 'Log In' : 'Sign Up'}</Button>
+                    {showLogInForm ? <LoginForm setUser={setUser} /> : <SignUpForm setUser={setUser} />}
+                    <Typography>{showLogInForm ? 'Don\'t have an account??' : 'Already have an account?'}</Typography>
+                    <Button onClick={toggleForm} variant="" >{showLogInForm ? 'Sign Up' : 'Log In'}</Button>
                 </div>
             </div>
         </main>

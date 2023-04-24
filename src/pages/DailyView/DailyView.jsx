@@ -1,4 +1,4 @@
-// import './DailyView.css'
+import './DailyView.css'
 import { useState, useEffect } from 'react'
 import EntryForm from '../../components/EntryForm/EntryForm'
 import Entry from '../../components/Entry/Entry'
@@ -9,6 +9,14 @@ import Button from '@mui/material/Button';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Box } from '@mui/material';
+import * as React from 'react';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
 
 export default function DailyView({ user, categories, setCategories, entries, setEntries }) {
     const [currentDate, setCurrentDate] = useState(new Date())
@@ -33,59 +41,90 @@ export default function DailyView({ user, categories, setCategories, entries, se
     let total = []
     todayEntries.forEach(entry => total.push(entry.cost))
     let dailyTotal = total.reduce((acc, currentValue) => acc + currentValue, 0)
+
+    console.log(todayEntries)
     
     return (
-        <div>
-                <Box>
-                    <Box className="flex-col m-5 p-5">
-                        <Typography
-                            variant="h4"
-                            component="h1"
-                        >
-                            {new Date(currentDate).toDateString()}
-                        </Typography>
-                    </Box>
-                    <Box className="flex center m-5">
-                        <IconButton onClick={handlePrevDay}><ArrowBackIcon /></IconButton>
-                        <Button onClick={handleToday} variant="outlined" size="small" >Today</Button>
-                        <IconButton onClick={handleNextDay}><ArrowForwardIcon/></IconButton>
-                    </Box>
+        <>
+            <Box>
+                <Box className="flex-col m-5 p-5">
+                    <Typography
+                        variant="h4"
+                        component="h1"
+                    >
+                        {new Date(currentDate).toDateString()}
+                    </Typography>
                 </Box>
+                <Box className="flex center m-5">
+                    <IconButton onClick={handlePrevDay}><ArrowBackIcon /></IconButton>
+                    <Button onClick={handleToday} variant="outlined" size="small" >Today</Button>
+                    <IconButton onClick={handleNextDay}><ArrowForwardIcon/></IconButton>
+                </Box>
+            </Box>
+            <div>
                 <div>
-                    <div>
-                        <div>
-                            <EntryForm user={user} date={currentDate} setEntries={setEntries} categories={categories} setCategories={setCategories}/>
-                        </div>
-                        <div>
-                            <p>Total</p>
-                            <p>${todayEntries.length > 0 ? dailyTotal : 0}</p>
-                        </div>
-                    </div>
-                    <div>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <td>Name</td>
-                                    <td>Category</td>
-                                    <td>Notes</td>
-                                    <td>Cost</td>
-                                    <td colSpan={2}></td>
-                                </tr>
-                            </thead>
-                            {/* <tbody> */}
-                                { todayEntries.length > 0 ? 
-                                <tbody>
-                                    {todayEntries.map((entry, index) => 
-                                        <Entry entry={entry} user={user} key={index} entries={entries} setEntries={setEntries} categories={categories} setCategories={setCategories}/>
-                                    )}
-                                </tbody>
-                                    :
-                                    "Nothing spent...yet!"
-                                }
-                            {/* </tbody> */}
-                        </table>
-                    </div>
+                    <EntryForm user={user} date={currentDate} setEntries={setEntries} categories={categories} setCategories={setCategories}/>
                 </div>
-        </div>
+                <div className="flex total">
+                    <p>Total</p>
+                    <p>${todayEntries.length > 0 ? dailyTotal : 0}</p>
+                </div>
+            </div>
+            <TableContainer component={Paper}>
+                <Table sx={{ minWidth: 650 }} aria-label="table">
+                    <TableHead>
+                        <TableRow>
+                            <TableCell align="center">Purchase</TableCell>
+                            <TableCell align="center">Category</TableCell>
+                            <TableCell align="center">Notes</TableCell>
+                            <TableCell align="center">Cost</TableCell>
+                            <TableCell align="center"></TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                    {todayEntries.map((entry, index) => 
+                        <Entry entry={entry} user={user} key={index} entries={entries} setEntries={setEntries} categories={categories} setCategories={setCategories}/>
+                    )}
+                    </TableBody>
+                </Table>
+            </TableContainer>
+        </>
     )
 }
+
+
+                // <div>
+                //     <div>
+                //         <div>
+                //             <EntryForm user={user} date={currentDate} setEntries={setEntries} categories={categories} setCategories={setCategories}/>
+                //         </div>
+                //         <div>
+                //             <p>Total</p>
+                //             <p>${todayEntries.length > 0 ? dailyTotal : 0}</p>
+                //         </div>
+                //     </div>
+                //     <div>
+                //         <table>
+                //             <thead>
+                //                 <tr>
+                //                     <td>Name</td>
+                //                     <td>Category</td>
+                //                     <td>Notes</td>
+                //                     <td>Cost</td>
+                //                     <td colSpan={2}></td>
+                //                 </tr>
+                //             </thead>
+                //             {/* <tbody> */}
+                //                 { todayEntries.length > 0 ? 
+                //                 <tbody>
+                //                     {todayEntries.map((entry, index) => 
+                //                         <Entry entry={entry} user={user} key={index} entries={entries} setEntries={setEntries} categories={categories} setCategories={setCategories}/>
+                //                     )}
+                //                 </tbody>
+                //                     :
+                //                     "Nothing spent...yet!"
+                //                 }
+                //             {/* </tbody> */}
+                //         </table>
+                //     </div>
+                // </div>

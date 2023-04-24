@@ -1,46 +1,13 @@
-.entry-item {
-	margin: .5rem;
-	width: 19rem;
-	border: 1px solid var(--accent-1)
+.CRUD-btn {
+	padding: .4rem;
+	margin: .4rem;
+	border: none;
+	background-color: var(--white);
+	cursor: pointer;
 }
 
-.entry-main {
-	align-items: flex-start;
-	border-radius: 4px;
-}
-
-.entry-main p {
-	font-size: .8rem;
-	margin: .1rem;
-	padding: .2rem;
-}
-
-.category {
-	padding: .2rem;
-	width: 100%;
-	border-bottom: 1px solid var(--accent-1)
-}
-
-.main-content-ctr {
-	width: 100%;
-}
-
-.main-content {
-	width: 50%;
-	text-align: center;
-	padding: 0rem .5rem;
-}
-
-.CRUD button {
-	color: black;
-	background-color: white;
-	font-weight: 400;
-	padding: 0;
-	margin: 0;
-}
-
-.CRUD button:hover {
-	color: var(--main);
+.CRUD-btn:hover {
+	color: red;
 }
 
 @media (max-width: 600px) {

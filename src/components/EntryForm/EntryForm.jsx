@@ -22,7 +22,7 @@ export default function EntryForm({ user, date, setEntries, categories, setCateg
 	})
   
 	function handleChange(evt) {
-		console.log(evt.target.value)
+		console.log(evt)
 		setFormData({
 			...formData,
 			[evt.target.name]: evt.target.value,
@@ -91,7 +91,7 @@ export default function EntryForm({ user, date, setEntries, categories, setCateg
 						>
 						{categories.map((category, index) => 
 							<MenuItem 
-							value={category.name} 
+							value={category._id} 
 							label="Category"
 							key={index}
 							>
@@ -134,7 +134,7 @@ export default function EntryForm({ user, date, setEntries, categories, setCateg
 			  color="error"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign Up
+              Add Purchase
             </Button>
           </Box>
 

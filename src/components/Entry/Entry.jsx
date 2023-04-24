@@ -1,6 +1,9 @@
-// import './Entry.css'
+import './Entry.css'
 import * as entriesAPI from '../../utilities/entries-api'
 import { Link } from 'react-router-dom'
+import TableRow from '@mui/material/TableRow';
+import TableCell from '@mui/material/TableCell';
+
 
 export default function Entry({ entry, entries, setEntries, categories, setCategories }) {
 
@@ -13,26 +16,28 @@ export default function Entry({ entry, entries, setEntries, categories, setCateg
 		let entryIdx = copyCategories[idx].entries.findIndex((entry) => entry._id === deleteEntry._id)
 		copyCategories[idx].entries.splice(entryIdx, 1)
 		setCategories(copyCategories)
-}
+	}
 
 	return (
-		<tr>
-			<td>{entry.name}</td>
-			<td>{entry.category.name}</td>
-			<td className="wrap">{entry.notes}</td>
-			<td>${entry.cost}</td>
-			<td className="CRUD">
-				<Link to={`/edit/${entry._id}`} state={{ 
-						name: entry.name,
-						category: entry.category.name,
-						cost: entry.cost,
-						notes: entry.notes,
-						date: entry.date,
-				}}><button>edit</button></Link>
-			</td>
-			<td className="CRUD">
-				<button onClick={handleDelete}>delete</button>
-			</td>
-		</tr>
+		<TableRow
+			sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+			>
+				<TableCell align="center">{entry.name}</TableCell>
+				<TableCell align="center">{entry.category.name}</TableCell>
+				<TableCell align="center">{entry.notes}</TableCell>
+				<TableCell align="center">${entry.cost}</TableCell>
+				<TableCell align="center">
+					<Link to={`/edit/${entry._id}`} state={{ 
+					name: entry.name,
+					category: entry.category.name,
+					cost: entry.cost,
+					notes: entry.notes,
+					date: entry.date,
+					}}>
+						<button className="CRUD-btn">edit</button>
+						<button onClick={handleDelete} className="CRUD-btn">delete</button>
+					</Link>
+				</TableCell>
+        </TableRow>
 	)
 }

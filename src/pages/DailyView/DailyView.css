@@ -1,4 +1,7 @@
-
+.total { 
+	justify-content: space-evenly;
+	padding: 1rem;
+}
 
 @media (max-width: 600px) {
 

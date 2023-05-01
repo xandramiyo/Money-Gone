@@ -2,13 +2,20 @@
 import { Link } from 'react-router-dom'
 import IncomeForm from '../../components/IncomeForm/IncomeForm'
 import IncomeTable from '../../components/IncomeTable/IncomeTable'
-import { Typography, Box, Grid, Button } from '@mui/material';
+import { Box, Grid, Button } from '@mui/material';
 
 export default function Spending({ user, incomeEntries, setIncomeEntries, categories }) {
 
     return (
         <>
-            <Box className="">
+            <Box 
+                sx={{ 
+					margin: '1rem',
+					padding: "1rem", 
+					boxShadow: '2px 2px 5px #a9a9a9',
+					
+				}}
+            >
                 <IncomeForm user={user} incomeEntries={incomeEntries} setIncomeEntries={setIncomeEntries}/>
                 <IncomeTable user={user} incomeEntries={incomeEntries} setIncomeEntries={setIncomeEntries}/>
             </Box>

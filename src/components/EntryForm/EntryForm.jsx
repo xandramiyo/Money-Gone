@@ -21,7 +21,6 @@ export default function EntryForm({ user, date, setEntries, categories, setCateg
 	})
   
 	function handleChange(evt) {
-		console.log(evt)
 		setFormData({
 			...formData,
 			[evt.target.name]: evt.target.value,

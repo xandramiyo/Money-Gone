@@ -66,8 +66,8 @@ export default function DailyView({ user, categories, setCategories, entries, se
                     <EntryForm user={user} date={currentDate} setEntries={setEntries} categories={categories} setCategories={setCategories}/>
                 </div>
                 <Box className="flex total">
-                    <p>Total</p>
-                    <p>${todayEntries.length > 0 ? dailyTotal : 0}</p>
+                    <Typography variant="h5">Total</Typography>
+                    <Typography variant="h5">${todayEntries.length > 0 ? dailyTotal : 0}</Typography>
                 </Box>
             </div>
             <TableContainer component={Paper}>

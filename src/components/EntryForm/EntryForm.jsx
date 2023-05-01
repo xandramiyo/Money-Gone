@@ -9,7 +9,7 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 
 export default function EntryForm({ user, date, setEntries, categories, setCategories }) {
@@ -137,79 +137,5 @@ export default function EntryForm({ user, date, setEntries, categories, setCateg
               Add Purchase
             </Button>
           </Box>
-
-
-
-
-		// <Grid className="entry-form-ctr" container spacing={1}>
-		// 	<form autoComplete="off" className="entry-form" onSubmit={handleAddEntry} noValidate>
-		// 		<Grid item className="m-2">
-		// 			<TextField
-		// 				label="Name of Entry"
-		// 				variant="outlined"
-		// 				type="text" 
-		// 				name="name" 
-		// 				onChange={handleChange} 
-		// 				value={formData.name} 
-		// 				required 
-		// 				fullWidth
-		// 			/>
-		// 		</Grid>
-		// 		<Grid item className="m-2">
-		// 			<FormControl fullWidth>
-		// 				<InputLabel id="category">Category</InputLabel>
-		// 				<Select
-		// 					id="category"
-		// 					value={formData.category}
-		// 					labelId='category'
-		// 					label="Category"
-		// 					onChange={handleChange}
-		// 					fullWidth
-		// 					required
-		// 					>
-		// 					{categories.map((category, index) => 
-		// 						<CategoryOption category={category} key={index} />
-		// 					)}
-		// 				</Select>
-		// 			</FormControl>
-		// 		</Grid>
-		// 		<Grid item className="m-2">
-		// 			<TextField
-		// 				label="Cost"
-		// 				variant="outlined"
-		// 				type="text" 
-		// 				name="cost" 
-		// 				onChange={handleChange} 
-		// 				value={formData.cost} 
-		// 				required 
-		// 				fullWidth
-		// 			/>
-		// 		</Grid>
-		// 		<Grid item className="m-2">
-		// 			<TextField
-		// 				label="Notes"
-		// 				variant="outlined"
-		// 				type="text" 
-		// 				name="name" 
-		// 				onChange={handleChange} 
-		// 				value={formData.notes} 
-		// 				multiline
-		// 				rows={3}
-		// 				fullWidth
-		// 			/>
-		// 		</Grid>
-		// 		<Grid item className="m-2">
-		// 			<Button 
-		// 				type="submit" 
-		// 				variant="contained" 
-		// 				color="error" 
-		// 				size="small"
-		// 				fullWidth
-		// 			>
-		// 				Add
-		// 			</Button>
-		// 		</Grid>
-		// 	</form>
-		// </Grid>
 	)
 }

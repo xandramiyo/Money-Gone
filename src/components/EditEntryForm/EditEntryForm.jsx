@@ -3,6 +3,14 @@ import { useState } from 'react'
 import { useLocation, useParams, useNavigate } from 'react-router-dom'
 import * as entriesAPI from '../../utilities/entries-api'
 import CategoryOption from '../CategoryOption/CategoryOption'
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import FormControl from '@mui/material/FormControl';
+import InputLabel from '@mui/material/InputLabel';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 
 export default function EditEntryForm({ user, categories, setCategories, entries, setEntries }) {
 	const location = useLocation()
@@ -58,37 +66,115 @@ export default function EditEntryForm({ user, categories, setCategories, entries
     }
 
 	return (
-		<div className="form-container edit-form-ctr">
-			<form autoComplete="off" className="" onSubmit={handleEditEntry}>
-				<label>Name of entry</label>
-              	<input 
+
+		<Box component="form" noValidate onSubmit={handleEditEntry} sx={{ mt: 3 }}>
+            <Grid container spacing={2}>
+                <Grid item xs={12}>
+                <TextField
+					label="Name of Entry"
+					variant="outlined"
 					type="text" 
 					name="name" 
-					value={formData.name} 
 					onChange={handleChange} 
+					value={formData.name} 
 					required 
-					placeholder="Target"
+					fullWidth
 					/>
-				<label>Category</label>
-				<select name="category" value={formData.category} onChange={handleChange} required>
-					<option></option>
-					{categories.map((category, index) => 
-						<CategoryOption category={category} key={index} />
-					)}
-				</select>
-				<label>Cost</label>
-              	<input type="text" name="cost" value={formData.cost} onChange={handleChange} required />
-				<label>Notes</label>
-              	<textarea 
+                </Grid>
+                <Grid item xs={12}>
+                <FormControl fullWidth>
+					<InputLabel id="category">Category</InputLabel>
+					<Select
+						labelId='category'
+						label="Category"
+						id="category"
+						name="category"
+						value={formData.category}
+						onChange={handleChange}
+						align="left"
+						fullWidth
+						required
+						>
+						{categories.map((category, index) => 
+							<MenuItem 
+							value={category._id} 
+							label="Category"
+							key={index}
+							>
+							{category.name}
+							</MenuItem>
+						)}
+					</Select>
+				</FormControl>
+              </Grid>
+              <Grid item xs={12}>
+			  	<TextField
+					label="Cost"
+					variant="outlined"
+					type="text" 
+					name="cost" 
+					onChange={handleChange} 
+					value={formData.cost} 
+					required 
+					fullWidth
+				/>
+              </Grid>
+              <Grid item xs={12}>
+			  <TextField
+					label="Notes"
+					variant="outlined"
 					type="text" 
 					name="notes" 
-					value={formData.notes} 
 					onChange={handleChange} 
-					rows={2}
-					placeholder="optional- add details of your expenses"
-					/>
-				<button type="submit">Make Changes</button>
-			</form>
-		</div>
+					value={formData.notes} 
+					multiline
+					rows={3}
+					fullWidth
+				/>
+              </Grid>
+            </Grid>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+			  color="error"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Make Changes
+            </Button>
+          </Box>
 	)
 }
+
+// <div className="form-container edit-form-ctr">
+// 	<form autoComplete="off" className="" onSubmit={handleEditEntry}>
+// 		<label>Name of entry</label>
+// 		<input 
+// 			type="text" 
+// 			name="name" 
+// 			value={formData.name} 
+// 			onChange={handleChange} 
+// 			required 
+// 			placeholder="Target"
+// 			/>
+// 		<label>Category</label>
+// 		<select name="category" value={formData.category} onChange={handleChange} required>
+// 			<option></option>
+// 			{categories.map((category, index) => 
+// 				<CategoryOption category={category} key={index} />
+// 			)}
+// 		</select>
+// 		<label>Cost</label>
+// 		<input type="text" name="cost" value={formData.cost} onChange={handleChange} required />
+// 		<label>Notes</label>
+// 		<textarea 
+// 			type="text" 
+// 			name="notes" 
+// 			value={formData.notes} 
+// 			onChange={handleChange} 
+// 			rows={2}
+// 			placeholder="optional- add details of your expenses"
+// 			/>
+// 		<button type="submit">Make Changes</button>
+// 	</form>
+// </div>

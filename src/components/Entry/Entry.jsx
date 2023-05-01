@@ -3,6 +3,7 @@ import * as entriesAPI from '../../utilities/entries-api'
 import { Link } from 'react-router-dom'
 import TableRow from '@mui/material/TableRow';
 import TableCell from '@mui/material/TableCell';
+import { Typography, Button } from '@mui/material';
 
 
 export default function Entry({ entry, entries, setEntries, categories, setCategories }) {
@@ -34,9 +35,14 @@ export default function Entry({ entry, entries, setEntries, categories, setCateg
 					notes: entry.notes,
 					date: entry.date,
 					}}>
-						<button className="CRUD-btn">edit</button>
-						<button onClick={handleDelete} className="CRUD-btn">delete</button>
+						<Button className="CRUD-btn">
+							<Typography>edit</Typography>
+						</Button>
 					</Link>
+						<Button onClick={handleDelete} className="CRUD-btn">
+							<Typography>delete</Typography>
+						</Button>
+					
 				</TableCell>
         </TableRow>
 	)

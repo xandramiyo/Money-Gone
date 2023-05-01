@@ -53,7 +53,7 @@ async function edit(req, res) {
         );
         res.json(await updatedEntry.populate('category'));
     } catch (err) {
-		console.log(error)
+		console.log(err)
         res.status(400).json(err);
     }
 }

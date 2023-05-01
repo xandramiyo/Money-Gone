@@ -42,7 +42,6 @@ export default function Entry({ entry, entries, setEntries, categories, setCateg
 						<Button onClick={handleDelete} className="CRUD-btn">
 							<Typography>delete</Typography>
 						</Button>
-					
 				</TableCell>
         </TableRow>
 	)

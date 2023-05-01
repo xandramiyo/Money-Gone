@@ -2,7 +2,6 @@
 import { useState } from 'react'
 import { useLocation, useParams, useNavigate } from 'react-router-dom'
 import * as entriesAPI from '../../utilities/entries-api'
-import CategoryOption from '../CategoryOption/CategoryOption'
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
@@ -137,8 +136,7 @@ export default function EditEntryForm({ user, categories, setCategories, entries
               type="submit"
               fullWidth
               variant="contained"
-			  color="error"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 3, mb: 2, bgcolor: 'primary.light' }}
             >
               Make Changes
             </Button>

@@ -2,7 +2,6 @@ import './EntryForm.css'
 import * as React from 'react';
 import { useState } from 'react'
 import * as entriesAPI from '../../utilities/entries-api'
-import CategoryOption from '../CategoryOption/CategoryOption'
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
@@ -60,7 +59,6 @@ export default function EntryForm({ user, date, setEntries, categories, setCateg
     }
 
 	return (
-
 		<Box component="form" noValidate onSubmit={handleAddEntry} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
                 <Grid item xs={12}>
@@ -131,8 +129,7 @@ export default function EntryForm({ user, date, setEntries, categories, setCateg
               type="submit"
               fullWidth
               variant="contained"
-			  color="error"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{ mt: 3, mb: 2, bgcolor: "primary.light"}}
             >
               Add Purchase
             </Button>

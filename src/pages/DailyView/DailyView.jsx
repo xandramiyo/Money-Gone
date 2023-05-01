@@ -65,16 +65,16 @@ export default function DailyView({ user, categories, setCategories, entries, se
                 <div>
                     <EntryForm user={user} date={currentDate} setEntries={setEntries} categories={categories} setCategories={setCategories}/>
                 </div>
-                <div className="flex total">
+                <Box className="flex total">
                     <p>Total</p>
                     <p>${todayEntries.length > 0 ? dailyTotal : 0}</p>
-                </div>
+                </Box>
             </div>
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="table">
                     <TableHead>
                         <TableRow>
-                            <TableCell align="center">Purchase</TableCell>
+                            <TableCell align="center" variant="h5">Purchase</TableCell>
                             <TableCell align="center">Category</TableCell>
                             <TableCell align="center">Notes</TableCell>
                             <TableCell align="center">Cost</TableCell>

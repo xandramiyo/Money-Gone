@@ -15,8 +15,9 @@ export default function NavBar({ user, setUser }) {
         <AppBar 
             position="static" 
             className="alignItems justifyContent" 
+            sx={{bgcolor: 'primary.light'}}
         >
-            <Toolbar sx={{ justifyContent: "center"}}>
+            <Toolbar sx={{ justifyContent: "center" }}>
 
                 <Link to=""><Button >
                     <Typography color="text.primary" href="">Daily View</Typography>

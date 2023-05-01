@@ -41,8 +41,6 @@ export default function DailyView({ user, categories, setCategories, entries, se
     let total = []
     todayEntries.forEach(entry => total.push(entry.cost))
     let dailyTotal = total.reduce((acc, currentValue) => acc + currentValue, 0)
-
-    console.log(todayEntries)
     
     return (
         <>
@@ -66,8 +64,8 @@ export default function DailyView({ user, categories, setCategories, entries, se
                     <EntryForm user={user} date={currentDate} setEntries={setEntries} categories={categories} setCategories={setCategories}/>
                 </div>
                 <Box className="flex total">
-                    <Typography variant="h5">Total</Typography>
-                    <Typography variant="h5">${todayEntries.length > 0 ? dailyTotal : 0}</Typography>
+                    <Typography variant="h6">Total</Typography>
+                    <Typography variant="h6">${todayEntries.length > 0 ? dailyTotal : 0}</Typography>
                 </Box>
             </div>
             <TableContainer component={Paper}>

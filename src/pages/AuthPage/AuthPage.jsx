@@ -18,7 +18,7 @@ export default function AuthPage({ setUser }) {
             <div> 
                 <div>
                     {showLogInForm ? <LoginForm setUser={setUser} /> : <SignUpForm setUser={setUser} />}
-                    <Typography>{showLogInForm ? 'Don\'t have an account??' : 'Already have an account?'}</Typography>
+                    <Typography>{showLogInForm ? 'Don\'t have an account?' : 'Already have an account?'}</Typography>
                     <Button onClick={toggleForm} variant="" >{showLogInForm ? 'Sign Up' : 'Log In'}</Button>
                 </div>
             </div>

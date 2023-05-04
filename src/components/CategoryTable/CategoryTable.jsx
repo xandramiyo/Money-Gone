@@ -1,6 +1,5 @@
-// import './CategoryTable.css'
 import CategoryTableRow from "../CategoryTableRow/CategoryTableRow"
-import { Box, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TableFooter } from '@mui/material';
+import { Box, Typography, Table, TableBody, TableCell, TableHead, TableRow, TableFooter } from '@mui/material';
 
 export default function CategoryTable({category}) {
 	const entries = category.entries
@@ -27,8 +26,10 @@ export default function CategoryTable({category}) {
 				</TableBody>
 				<TableFooter>
 					<TableRow>
-						<TableCell colSpan="2">Total</TableCell>
-						<TableCell colSpan="2" className="">${categoryTotal}</TableCell>
+						<TableCell colSpan="3" align="right">
+							<Typography sx={{mr: '3rem'}}>Total</Typography>
+						</TableCell>
+						<TableCell>${categoryTotal}</TableCell>
 					</TableRow>
 				</TableFooter>
 			</Table>

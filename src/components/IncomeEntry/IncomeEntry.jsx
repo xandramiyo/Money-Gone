@@ -1,5 +1,6 @@
-// import './IncomeEntry.css'
 import * as incomeAPI from '../../utilities/income-api'
+import { Box, Typography, TableCell, TableRow, Button } from '@mui/material';
+
 
 export default function IncomeEntry({ incomeEntry, incomeEntries, setIncomeEntries }) {
 
@@ -9,12 +10,12 @@ export default function IncomeEntry({ incomeEntry, incomeEntries, setIncomeEntri
 	}
 
 	return (
-		<tr>
-			<td>{new Date(incomeEntry.date).toDateString()}</td>
-			<td>${incomeEntry.amount}</td>
-			<td className="delete-cell">
-				<button className="" onClick={handleDelete} >delete</button>
-			</td>
-		</tr>
+		<TableRow>
+			<TableCell>{new Date(incomeEntry.date).toDateString()}</TableCell>
+			<TableCell>${incomeEntry.amount}</TableCell>
+			<TableCell>
+				<Button onClick={handleDelete} >delete</Button>
+			</TableCell>
+		</TableRow>
 	)
 }

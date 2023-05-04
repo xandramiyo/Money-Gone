@@ -46,11 +46,12 @@ See purchases by category and the total amount spent in a given category
 
 ## Bug list
 <ul>
+	<li>Currently unable to add new Income entries- issue with Material UI datepicker and React state not updating</li>
+	<li>Currently unable to edit a purchase entry. 400 error when submit button is clicked.</li>
 	<li>editing an entry does not properly update the categories state</li>
-	<li>issue with the categories sometimes not loading</li>
 </ul>
 
-## Future Updates
+## Possible Future Updates
 
 <ul>
 	<li>Add sort/filter feature on category detail pages in order to sort purchases by amount or filter by a given time period</li>

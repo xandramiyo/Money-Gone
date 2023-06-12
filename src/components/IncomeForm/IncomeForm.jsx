@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import * as incomeAPI from  '../../utilities/income-api'
-import { Box, Typography, Button, TextField } from '@mui/material';
+import { Box, Typography, Button, TextField, FormControl } from '@mui/material';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
@@ -51,19 +51,20 @@ export default function IncomeForm({user, incomeEntries, setIncomeEntries}) {
 			>
 				<Typography variant="h5" sx={{mt: ".2rem"}}>Income Tracker</Typography>
 				<Box>
-					<LocalizationProvider dateAdapter={AdapterDayjs}
-					value={formData.date} >
-						<DatePicker
-							type="date" 
-							name="date" 
-							value={formData.date} 
-							onChange={handleChange} 
-							required 
-							label="Enter date"
-							inputFormat="MM/dd/yyyy"
-							views={["day", "month", "year"]}
-							sx={{margin: '1rem', width: '12rem'}}
-						/>
+					<LocalizationProvider dateAdapter={AdapterDayjs}>
+						<FormControl>
+							<DatePicker
+								// type="date" 
+								name="date" 
+								value={formData.date} 
+								onChange={handleChange} 
+								required 
+								label="Enter date"
+								// inputFormat="MM/DD/YYYY"
+								views={["day", "month", "year"]}
+								sx={{margin: '1rem', width: '12rem'}}
+							/>
+						</FormControl>
 					</LocalizationProvider>
 					<TextField 
 						type="text" 
